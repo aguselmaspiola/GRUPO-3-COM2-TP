@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contacto springfild</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Contacto springfild</h1>
+            <a href="./index.html">Volver al indice</a>
+        </header>
+        <hr>
+        <article>
+            <h2>Informacion de contacto</h2>
+            
+            <p>Aca en la pagina oficial de informacion de springfild podes encontrar contactos de consulta asi mismo como nuestras redes</p>
+            <br>
+            <p>
+                <strong>Direccion:</strong>Calle falsa 123
+            </p>
+            <p>
+                Cualquier consulta llamanos a nuestro <strong>Telefono</strong>:
+                <a href="tel:+555-3226">Llamar</a>
+            </p>
+            <p>
+                Cualquier consulta escribnos a nuestro <strong>email:</strong>
+                <a href="mailto:agenciadespringfiels@gmail.com">Contactar</a>
+            </p>
+            <br>
+            <h2>Nuestras redes</h2>
+            <a href="https://www.instagram.com/popular/springfild/" target="_blank">Nuestro instagram</a><br>
+            <a href="https://www.facebook.com/LosSimpson/" target="_blank">Nuestro facebook</a><br>
+            <a href="https://x.com/TheSimpsons" target="_blank">Nuestro x</a><br>
+            <a href="https://www.tiktok.com/tag/los_simpsons" target="_blank">Nuestro tik tok</a><br>
+            <h2>Encuesta de satisfaccion</h2>
+            
+            <form action="/enviar" method="post">
+                <label for="nombre">nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <br>
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="satisfaccion">Con la pagina me siento</label>
+                <select id="satisfaccion" name="satisfaccion">
+                    <option value="">satsifecho</option>
+                    <option value="">muy satsifecho</option>
+                    <option value="">poco satsifecho</option>
+                </select>
+                <br>
+                <label for="opinion">opinion</label><br>
+                <textarea id="opinion" name="mensaje" rows="5" placeholder="Que opinas de nuestra pagina o mejorarias?"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+    
+        </article>
+        <hr>
+        <footer>
+            <p><small>La pagina de contacto de Springfield</small></p>
+            <img src="./IMAGENES/Escudo_Springfield.png" alt="Escudo de Springfield" width="100" height="100">
+        </footer>
+    </body>
+</html>
