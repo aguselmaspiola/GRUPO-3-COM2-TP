@@ -1,0 +1,85 @@
+/*NOTA: Falta configurar para las imagenes y correjirlo para que quede mas a gusto (hice algo rapido como para tener una base)*/
+
+:root{
+    --color_fondo:#44bbe0;
+    --color_fondo_claro:#6fddff;
+    --ccolor_fondo_oscuro:#009bcad8;
+    --color_texto: #ffe27b;
+    --color_titulos: #e0b000;
+}
+/*arme las variables para los algunos colores y demas, queda mas cheto gente (y no hace falta buscar siempre el colo, solo el nombre de la variable)*/
+
+* {
+    padding: 0% auto;
+    margin: 0% auto;
+    box-sizing: border-box;
+}
+/*basicamente la configuracion de los margenes y separaciones entre lineas (la seteo en 0 por default. Dsp se puede especificar)*/
+
+html{font-size: 16px;}
+
+body{
+    background-color: #ffc0cb;
+    font-style: normal;
+    max-width: 1200px;
+}
+/*aca puse las propiedades que va a tener 
+la pagina en el body*/
+
+header{
+    background-color: var(--color_fondo_claro);
+    color: var(--color_texto);
+}
+/*aca puse las prop para el header*/
+
+footer{
+    background-color: var(--ccolor_fondo_oscuro);
+    color: var(--color_texto);
+}
+/*aca puse algunas proiedades para el footer*/
+
+main{
+    color: var(--color_texto);
+    background-color: var(--color_fondo);
+}
+/*especificaciones del main*/
+article{
+    margin-left: 8px;
+}
+/*especificaciones para el <article>*/
+
+nav ul{
+    list-style: none;
+    gap: 16px;
+}
+nav a{
+    list-style: none;
+    gap: 16px;
+}
+/*especificaciones para el nav (el normal, el de lista, etc...)*/
+
+h1{
+    color: var(--color_titulos);
+    font-size: 60px;
+    text-align: center;
+}
+h2{
+    color: var(--color_titulos);
+    font-size: 30px;
+}
+h3{
+    color: var(--color_titulos);
+    font-size: 30px;
+}
+p{
+    color: var(--color_texto);
+    font-size: 15px;
+    margin: 10px;
+}
+/*las configuraciones para los distiintos tipos de texto (<h1>, <h2>, <h3> y <p>)*/
+
+section{
+    margin-left: 8px;
+}
+
+/*configuracion de los sections*/
