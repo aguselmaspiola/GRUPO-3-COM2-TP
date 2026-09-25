@@ -1,11 +1,12 @@
 /*NOTA: Falta configurar para las imagenes y correjirlo para que quede mas a gusto (hice algo rapido como para tener una base)*/
 
 :root{
-    --color_fondo:#44bbe0;
-    --color_fondo_claro:#6fddff;
-    --ccolor_fondo_oscuro:#009bcad8;
-    --color_texto: #ffe27b;
-    --color_titulos: #e0b000;
+    --color_fondo_sec:#fce4e4;
+    --color_fondo: #2dc3ff;
+    --color_texto: #333333;
+    --color_titulos: #1D3B53;
+    --color_detalles: #f3ff4bdc;
+    --color_detalles_2: #e277c7;
 }
 /*arme las variables para los algunos colores y demas, queda mas cheto gente (y no hace falta buscar siempre el colo, solo el nombre de la variable)*/
 
@@ -19,7 +20,7 @@
 html{font-size: 16px;}
 
 body{
-    background-color: #ffc0cb;
+    background-color: var(--color_fondo_sec);
     font-style: normal;
     max-width: 1200px;
 }
@@ -27,13 +28,13 @@ body{
 la pagina en el body*/
 
 header{
-    background-color: var(--color_fondo_claro);
+    background-color: var(--color_fondo);
     color: var(--color_texto);
 }
 /*aca puse las prop para el header*/
 
 footer{
-    background-color: var(--ccolor_fondo_oscuro);
+    background-color: var(--color_fondo);
     color: var(--color_texto);
 }
 /*aca puse algunas proiedades para el footer*/
@@ -52,11 +53,16 @@ nav ul{
     list-style: none;
     gap: 16px;
 }
-nav a{
+a{
+    color: var(--color_detalles);
     list-style: none;
     gap: 16px;
+    text-decoration: none;
 }
-/*especificaciones para el nav (el normal, el de lista, etc...)*/
+a:hover {
+    color: var(--color_detalles_2);
+}
+/*especificaciones para el nav (el normal, el de lista, links, etc...)*/
 
 h1{
     color: var(--color_titulos);
@@ -81,5 +87,26 @@ p{
 section{
     margin-left: 8px;
 }
-
 /*configuracion de los sections*/
+input{
+    background-color: var(--color_detalles_2);
+    color: var(--color_texto);
+}
+select{
+    background-color: var(--color_detalles_2);
+    color: var(--color_texto);
+}
+textarea{
+    background-color: var(--color_detalles_2);
+    color: var(--color_texto);
+}
+/*configure un par de cosas para el tema del ingreso de datos (solo en la encuesta de contactos pero bue)*/
+button{
+    background-color: var(--color_detalles_2);
+    color: var(--color_detalles);
+}
+button:hover{
+    background-color: var(--color_texto);
+    color: var(--color_detalles_2);
+}
+/*confi de los botones (1 solo y tmb en la encuesta de ocntactos)*/
