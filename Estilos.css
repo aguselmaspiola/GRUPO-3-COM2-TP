@@ -2,10 +2,16 @@
 
 :root{
     --color_fondo_sec:#fce4e4;
-    --color_fondo: #2dc3ff;
+    --color_fondo: #64c7ee;
     --color_texto: #333333;
-    --color_detalles: #f3ff4bdc;
+    --color_detalles: #d5dd5edc;
     --color_detalles_2: #e277c7;
+    --fuenteprincipal:"Montserrat"
+    /*PONGAN ESTO EN SU PAGINA!!!!!! <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+*/
+    
 }
 /*arme las variables para los algunos colores y demas, queda mas cheto gente (y no hace falta buscar siempre el colo, solo el nombre de la variable)*/
 
