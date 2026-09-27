@@ -89,15 +89,18 @@ a:hover {
 /*especificaciones para el nav (el normal, el de lista, links, etc...)*/
 
 h1{
+    font-family: 'Simpsons';
     color: var(--color_titulos);
     font-size: 4rem;
     text-align: center;
 }
 h2{
+    font-family: 'Simpsons';
     color: var(--color_titulos);
     font-size: 3rem;
 }
 h3{
+    font-family: 'Simpsons';
     color: var(--color_titulos);
     font-size: 2rem;
 }
