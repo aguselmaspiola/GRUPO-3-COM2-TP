@@ -38,7 +38,7 @@ body{
 la pagina en el body*/
 
 header{
-    font-family: "Simpsonsfont";
+    font-family: 'Simpsons', sans-serif; 
     background-color: var(--color_fondo);
     color: var(--color_texto);
     width: 100%;
