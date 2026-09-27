@@ -10,6 +10,13 @@
 }
 /*arme las variables para los algunos colores y demas, queda mas cheto gente (y no hace falta buscar siempre el colo, solo el nombre de la variable)*/
 
+font-face {
+  font-family: 'Simpsons';
+  src: url(./FUENTES/Simpsonfont.ttf) format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
     padding: 0% auto;
     margin: 0% auto;
