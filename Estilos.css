@@ -116,6 +116,7 @@ h4{
 }
 
 p{
+    font-style: var(--fuenteprincipal);
     color: var(--color_texto);
     font-size: 1rem;
 }
