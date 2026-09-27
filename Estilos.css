@@ -104,6 +104,12 @@ h3{
     color: var(--color_titulos);
     font-size: 2rem;
 }
+h4{
+    font-family: 'Simpsons';
+    color: var(--color_titulos);
+    font-size: 1rem;
+}
+
 p{
     color: var(--color_texto);
     font-size: 1rem;
