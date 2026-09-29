@@ -1,16 +1,11 @@
 /*NOTA: Falta configurar para las imagenes y correjirlo para que quede mas a gusto (hice algo rapido como para tener una base)*/
 
 :root{
-    --color_fondo_sec:#fce4e4;
-    --color_fondo: #64c7ee;
-    --color_texto: #333333;
-    --color_detalles: #d5dd5edc;
+    --color_fondo_sec:#c1dfeb;
+    --color_fondo: #1090f1;
+    --color_texto: #d5effe;
+    --color_detalles: #eeea10;
     --color_detalles_2: #e277c7;
-    --fuenteprincipal:"Montserrat"
-    /*PONGAN ESTO EN SU PAGINA!!!!!! <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-*/
     
 }
 /*arme las variables para los algunos colores y demas, queda mas cheto gente (y no hace falta buscar siempre el colo, solo el nombre de la variable)*/
@@ -18,6 +13,13 @@
 @font-face {
   font-family: 'Simpsons';
   src: url("./FUENTES/Simpsonfont.ttf") format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Minecrafter';
+  src: url("./FUENTES/Minecraft.ttf") format('truetype'); 
   font-weight: normal;
   font-style: normal;
 }
@@ -32,12 +34,11 @@
 html{font-size: 1rem;}
 
 body{
-    background-color: var(--color_fondo_sec);
+    background-image: url("./IMAGENES/fondo_nubes.jpg");
     font-style: normal;
-    max-width: 1200px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    border: 2px solid var(--color_detalles);
+    box-sizing: border-box;
+    max-width: 1225px;
 }
 /*aca puse las propiedades que va a tener 
 la pagina en el body*/
@@ -47,20 +48,22 @@ header{
     background-color: var(--color_fondo);
     color: var(--color_texto);
     width: 100%;
+    padding: 1rem;
 }
-/*aca puse las prop para el header*/
+/*aca puse las propiedades para el header*/
 
 footer{
     background-color: var(--color_fondo);
     color: var(--color_texto);
     width: 100%;
+    padding: 1rem;
+    text-align: center;
 }
-/*aca puse algunas proiedades para el footer*/
+/*aca puse algunas propiedades para el footer*/
 
 main{
     color: var(--color_texto);
     background-color: var(--color_fondo);
-    flex: 1;
     width: 100%;
 }
 /*especificaciones del main*/
@@ -74,20 +77,22 @@ section{
     padding: 1rem;
 }
 /*especificaciones para los sections*/
+
 nav{
     list-style: none;
     gap: 32px;
     margin: 0.5rem;
-    margin-left: 1rem;
 }
+
 a{
+    font-family: 'Minecrafter';
     color: var(--color_detalles);
     list-style: none;
     gap: 32px;
     text-decoration: none;
     margin: 0.5rem;
-    margin-left: 1vh;
 }
+
 a:hover {
     color: var(--color_detalles_2);
 }
@@ -96,19 +101,22 @@ a:hover {
 h1{
     color:var(--color_detalles);
     font-family: 'Simpsons';
-    font-size: 4rem;
+    font-size: 3.8rem;
     text-align: center;
 }
+
 h2{
     color:var(--color_detalles);
     font-family: 'Simpsons';
     font-size: 3rem;
 }
+
 h3{
     color:var(--color_detalles);
     font-family: 'Simpsons';
     font-size: 2rem;
 }
+
 h4{
     color:var(--color_detalles);
     font-family: 'Simpsons';
@@ -116,25 +124,36 @@ h4{
 }
 
 p{
-    font-style: var(--fuenteprincipal);
+    font-family: 'Minecrafter';
     color: var(--color_texto);
     font-size: 1rem;
 }
 /*las configuraciones para los distiintos tipos de texto (<h1>, <h2>, <h3> y <p>)*/
 
+li{
+    font-family: 'Minecrafter';
+    color: var(--color_texto);
+    font-size: 1rem;
+}
+
 input{
+    font-family: 'Minecrafter';
     background-color: var(--color_detalles_2);
     color: var(--color_texto);
     border-color: var(--color_detalles);
     border-style: solid;
 }
+
 select{
+    font-family: 'Minecrafter';
     background-color: var(--color_detalles_2);
     color: var(--color_texto);
     border-color: var(--color_detalles);
     border-style: solid;
 }
+
 textarea{
+    font-family: 'Minecrafter';
     background-color: var(--color_detalles_2);
     color: var(--color_texto);
     border-color: var(--color_detalles);
@@ -144,16 +163,43 @@ textarea{
     max-height: 120px;
 }
 /*configure un par de cosas para el tema del ingreso de datos (solo en la encuesta de contactos pero bue)*/
+
 button{
+    font-family: 'Minecrafter';
     background-color: var(--color_detalles_2);
     color: var(--color_detalles);
     border-color: var(--color_detalles);
     border-style: solid
 }
+
 button:hover{
+    font-family: 'Minecrafter';
     background-color: var(--color_texto);
     color: var(--color_detalles_2);
     border-color: var(--color_detalles);
     border-style: solid
 }
 /*confi de los botones (1 solo y tmb en la encuesta de ocntactos)*/
+
+label{
+    font-family: 'Minecrafter';
+    color: var(--color_texto);
+    font-size: 1rem;
+}
+
+hr{
+    border: 1px solid var(--color_detalles);
+}
+
+img{
+    display: block;
+    margin: 1vh auto;
+    border: 2px solid var(--color_detalles);
+    height: auto;
+    max-width: 50vh;
+}
+
+div{
+    display: flex;
+    flex-direction: row;
+}
