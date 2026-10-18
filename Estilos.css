@@ -8,7 +8,6 @@
     --color_detalles_2: #e277c7;
     
 }
-/*arme las variables para los algunos colores y demas, queda mas cheto gente (y no hace falta buscar siempre el colo, solo el nombre de la variable)*/
 
 @font-face {
   font-family: 'Simpsons';
@@ -29,111 +28,100 @@
     margin: 0% auto;
     box-sizing: border-box;
 }
-/*basicamente la configuracion de los margenes y separaciones entre lineas (la seteo en 0 por default. Dsp se puede especificar)*/
 
 html{font-size: 1rem;}
 
 body{
     background-image: url("./IMAGENES/fondo_nubes.jpg");
-    font-style: normal;
     border: 2px solid var(--color_detalles);
     box-sizing: border-box;
-    max-width: 1225px;
+    max-width: 1225px;;
 }
-/*aca puse las propiedades que va a tener 
-la pagina en el body*/
+
 
 header{
     font-family: 'Simpsons';
     background-color: var(--color_fondo);
     color: var(--color_texto);
     width: 100%;
-    padding: 1rem;
+    position: sticky; top: 0;
+    border-bottom: 1px solid var(--color_detalles);
 }
-/*aca puse las propiedades para el header*/
+
 
 footer{
     background-color: var(--color_fondo);
     color: var(--color_texto);
     width: 100%;
-    padding: 1rem;
     text-align: center;
 }
-/*aca puse algunas propiedades para el footer*/
 
 main{
     color: var(--color_texto);
     background-color: var(--color_fondo);
     width: 100%;
 }
-/*especificaciones del main*/
-
-article{
-    padding: 1rem;
-}
-/*especificaciones para el <article>*/
 
 section{
     padding: 1rem;
 }
-/*especificaciones para los sections*/
+
+article{
+    padding: 1rem;
+
+}
 
 nav{
     list-style: none;
-    gap: 32px;
-    margin: 0.5rem;
-}
+    padding: 1rem;
+    margin-bottom: 1rem;
 
+}
 a{
     font-family: 'Minecrafter';
     color: var(--color_detalles);
     list-style: none;
-    gap: 32px;
     text-decoration: none;
-    margin: 0.5rem;
 }
 
 a:hover {
     color: var(--color_detalles_2);
 }
-/*especificaciones para el nav (el normal, el de lista, links, etc...)*/
 
 h1{
     color:var(--color_detalles);
     font-family: 'Simpsons';
     font-size: 3.8rem;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 h2{
     color:var(--color_detalles);
     font-family: 'Simpsons';
     font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 h3{
     color:var(--color_detalles);
     font-family: 'Simpsons';
     font-size: 2rem;
-}
-
-h4{
-    color:var(--color_detalles);
-    font-family: 'Simpsons';
-    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 p{
     font-family: 'Minecrafter';
     color: var(--color_texto);
     font-size: 1rem;
+    margin-bottom: 1rem;
 }
-/*las configuraciones para los distiintos tipos de texto (<h1>, <h2>, <h3> y <p>)*/
 
 li{
     font-family: 'Minecrafter';
     color: var(--color_texto);
     font-size: 1rem;
+    margin-bottom: 5px;
 }
 
 input{
@@ -162,14 +150,13 @@ textarea{
     min-width: 10%;
     max-height: 120px;
 }
-/*configure un par de cosas para el tema del ingreso de datos (solo en la encuesta de contactos pero bue)*/
 
 button{
     font-family: 'Minecrafter';
     background-color: var(--color_detalles_2);
     color: var(--color_detalles);
     border-color: var(--color_detalles);
-    border-style: solid
+    border-style: solid;
 }
 
 button:hover{
@@ -177,9 +164,9 @@ button:hover{
     background-color: var(--color_texto);
     color: var(--color_detalles_2);
     border-color: var(--color_detalles);
-    border-style: solid
+    border-style: solid;
+    border-radius: 50vh;
 }
-/*confi de los botones (1 solo y tmb en la encuesta de ocntactos)*/
 
 label{
     font-family: 'Minecrafter';
@@ -193,13 +180,15 @@ hr{
 
 img{
     display: block;
-    margin: 1vh auto;
     border: 2px solid var(--color_detalles);
     height: auto;
-    max-width: 50vh;
+    max-height: 45vh;
+    max-width: 45vh;
 }
 
 div{
     display: flex;
     flex-direction: row;
+    gap: 1rem 5rem;
+    flex-wrap: wrap;
 }
