@@ -29,7 +29,7 @@
     box-sizing: border-box;
 }
 
-html{font-size: 1rem;}
+html{font-size: 100%;}
 
 body{
     background-image: url("./IMAGENES/fondo_nubes.jpg");
@@ -45,7 +45,6 @@ header{
     width: 100%;
     position: sticky; top: 0;
     border-bottom: 1px solid var(--color_detalles);
-    height: 30vh;
 }
 
 footer{
@@ -75,6 +74,15 @@ nav{
     margin-bottom: 1rem;
 
 }
+
+li{
+    list-style: none;
+    font-family: 'Minecrafter';
+    color: var(--color_texto);
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
 a{
     font-family: 'Minecrafter';
     color: var(--color_detalles);
@@ -89,7 +97,7 @@ a:hover {
 h1{
     color:var(--color_detalles);
     font-family: 'Simpsons';
-    font-size: 3.8rem;
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -97,14 +105,14 @@ h1{
 h2{
     color:var(--color_detalles);
     font-family: 'Simpsons';
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
 h3{
     color:var(--color_detalles);
     font-family: 'Simpsons';
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
@@ -115,12 +123,6 @@ p{
     margin-bottom: 1rem;
 }
 
-li{
-    font-family: 'Minecrafter';
-    color: var(--color_texto);
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
 
 input{
     font-family: 'Minecrafter';
@@ -172,23 +174,13 @@ label{
     font-size: 1rem;
 }
 
-hr{
+hr{ 
     border: 1px solid var(--color_detalles);
 }
 
 img{
-    display: block;
-    border: 2px solid var(--color_detalles);
-    height: auto;
-    max-height: 50vh;
-    max-width: 45vh;
-    min-width: 10vh;
-    min-height: 30vh;
-}
-
-div{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem 5rem;
-    flex-wrap: wrap;
+    height: 25vh;
+    width: auto;
+    max-width: 45%;
+    border: var(--color_detalles), solid, 2px;
 }
