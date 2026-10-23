@@ -35,9 +35,8 @@ body{
     background-image: url("./IMAGENES/fondo_nubes.jpg");
     border: 2px solid var(--color_detalles);
     box-sizing: border-box;
-    max-width: 1225px;;
+    width: 67%;
 }
-
 
 header{
     font-family: 'Simpsons';
@@ -46,14 +45,13 @@ header{
     width: 100%;
     position: sticky; top: 0;
     border-bottom: 1px solid var(--color_detalles);
+    height: 30vh;
 }
-
 
 footer{
     background-color: var(--color_fondo);
     color: var(--color_texto);
     width: 100%;
-    text-align: center;
 }
 
 main{
@@ -182,8 +180,10 @@ img{
     display: block;
     border: 2px solid var(--color_detalles);
     height: auto;
-    max-height: 45vh;
+    max-height: 50vh;
     max-width: 45vh;
+    min-width: 10vh;
+    min-height: 30vh;
 }
 
 div{
