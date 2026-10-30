@@ -1,4 +1,3 @@
-/*NOTA: Falta configurar para las imagenes y correjirlo para que quede mas a gusto (hice algo rapido como para tener una base)*/
 
 :root{
     --color_fondo_sec:#c1dfeb;
@@ -10,53 +9,57 @@
 }
 
 @font-face {
-  font-family: 'Simpsons';
-  src: url("./FUENTES/Simpsonfont.ttf") format('truetype'); 
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Simpsons';
+    src: url("./FUENTES/Simpsonfont.ttf") format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Minecrafter';
-  src: url("./FUENTES/Minecraft.ttf") format('truetype'); 
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Minecrafter';
+    src: url("./FUENTES/Minecraft.ttf") format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
 }
 
 * {
-    padding: 0% auto;
-    margin: 0% auto;
     box-sizing: border-box;
+    margin: 0;
 }
 
 html{font-size: 100%;}
 
 body{
+    display: grid;
+    grid-template-columns: 1fr 67% 1fr;
+    grid-template-rows: auto 1fr auto;
     background-image: url("./IMAGENES/fondo_nubes.jpg");
-    border: 2px solid var(--color_detalles);
-    box-sizing: border-box;
-    width: 67%;
 }
 
 header{
-    font-family: 'Simpsons';
     background-color: var(--color_fondo);
     color: var(--color_texto);
-    width: 100%;
-    position: sticky; top: 0;
-    border-bottom: 1px solid var(--color_detalles);
+    border: 2px solid var(--color_detalles);
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky; top: 0%;
 }
 
 footer{
+    border: 2px solid var(--color_detalles);
     background-color: var(--color_fondo);
     color: var(--color_texto);
-    width: 100%;
+    grid-column: 2;
+    grid-row: 3;
 }
 
 main{
     color: var(--color_texto);
     background-color: var(--color_fondo);
-    width: 100%;
+    grid-column: 2;
+    grid-row: 2;
+    border: 2px solid var(--color_detalles);
+    border-top: none;
 }
 
 section{
