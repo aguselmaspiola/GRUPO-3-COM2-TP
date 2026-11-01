@@ -187,3 +187,15 @@ img{
     max-width: 45%;
     border: var(--color_detalles), solid, 2px;
 }
+
+div{
+    display: flex;
+    flex-direction: column;
+}
+
+.imagenes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5rem;
+}
