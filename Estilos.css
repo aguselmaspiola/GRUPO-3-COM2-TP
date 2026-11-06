@@ -225,6 +225,11 @@ div{
 #texto_envio_encuesta{
     display: none;
     color: #1cdb7b;
-    font-size: large;
+    font-size: 3rem;
 }
 
+.texto_error{
+    display: none;
+    color: red;
+    font-size: 1.5rem;
+}
