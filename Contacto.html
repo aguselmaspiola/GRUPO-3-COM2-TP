@@ -9,8 +9,6 @@
          <link rel="icon" href="./IMAGENES/rosquilla_LogoPagina.png" type="image/x-icon">
     </head>
 
-    
-
     <body>
         <header>
             <h1>Contacto springfild</h1>
@@ -20,52 +18,87 @@
                     <li><a href="index.html">Volver al inicio</a></li>
                     <li><a href="CIUDAD.html">Ciudad</a></li>
                     <li><a href="Lugares.html">Lugares</a></li>
+                    <li><a href="Actividad.html">Sorteo</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
             <hr>
-            <nav>
-                <h2>En esta pagina</h2>
-                <ul>
-                    <li><a href="#Informacion">Informacion de contacto</a></li>
-                    <li><a href="#Redes">Nuestras redes</a></li>
-                    <li><a href="#Encuesta">Encuesta de satisfaccion</a></li>
-                </ul>
-            </nav>
-            <hr>
-            <article>
-                <h2 id="Informacion">Informacion de contacto</h2>
-                
-                <p>Acá en la página oficial de información de springfild podes encontrar contactos de consulta asi mismo como nuestras redes</p>
-                <br>
-                <p>
-                    <strong>Direccion: </strong>Calle falsa 123
-                </p>
-                <p>
-                    Cualquier consulta llamanos a nuestro <strong>Telefono</strong>:
-                    <a href="tel:+555-3226">Llamar</a>
-                </p>
-                <p>
-                    Cualquier consulta escribinos a nuestro <strong>email:</strong>
-                    <a href="mailto:agenciadespringfiels@gmail.com">Contactar</a>
-                </p>
-                <br>
-
-                <h2 id="Redes">Nuestras redes</h2>
-                <nav>
-                    <a href="https://www.instagram.com/popular/springfild/" target="_blank">Nuestro instagram</a><br>
-                    <a href="https://www.facebook.com/LosSimpson/" target="_blank">Nuestro facebook</a><br>
-                    <a href="https://x.com/TheSimpsons" target="_blank">Nuestro x</a><br>
-                    <a href="https://www.tiktok.com/tag/los_simpsons" target="_blank">Nuestro tik tok</a>
-                </nav>
-            </article>
-
-            <hr>
-
             <section>
-                <h2 id="Encuesta">Encuesta de satisfaccion</h2>
+                <p>
+                    <strong>Springfield</strong> te espera pronto, no dudes en conctactarnos en esta página ante cualquier duda o consulta.
+                    Aquí encontrarás información de precios para el viaje, cómo contactarnos, nuestras redes sociales, una encuesta de
+                    satisfacción para que nos cuentes tu experiencia, y una actividad con premio para que participes y ganes un obsequio especial.
+                </p>
+
+                 <nav>
+                    <h2>En esta pagina</h2>
+                    <ul>
+                        <li><a href="#Precios">Precios del viaje</a></li>
+                        <li><a href="#Informacion">Informacion de contacto</a></li>
+                        <li><a href="#Redes">Nuestras redes</a></li>
+                        <li><a href="#Encuesta">Encuesta de satisfaccion</a></li>
+                        <li><a href="#Actividad">Actividad con premio</a></li>
+                    </ul>
+                </nav>
+            </section>
+           
+            <hr>
+
+            <section id="Precios">
+                <h2>Precios del viaje</h2>
+                <p>
+                    Los precios de los viajes a Springfield varían según la temporada y el tipo de paquete que elijas.
+                    A continuación, te proporcionamos una guía general de los precios:
+                </p>
+                <ul>
+                    <li><b>Paquete básico:</b> Incluye transporte y alojamiento. Precio: <b>$500</b> por persona.</li>
+                    <li><b>Paquete estándar:</b> Incluye transporte, alojamiento y algunas actividades turísticas. Precio: <b>$800</b> por persona.</li>
+                    <li><b>Paquete premium:</b> Incluye transporte, alojamiento, todas las actividades turísticas y comidas. Precio:
+                        <b>$1200</b> por persona.</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <section id="Informacion">
+                <h2>Informacion de contacto</h2>
+                <p>
+                    Nuestra agencia de viajes opera desde el 12 de septiembre de 2007, y desde entonces hemos estado ofreciendo experiencias
+                    inolvidables a nuestros clientes. Springfield es una ciudad llena de historia, cultura y diversión, y estamos aquí
+                    para asegurarnos de que tu visita sea lo más agradable posible. A continuación, te proporcionamos la información de contacto
+                    para que puedas comunicarte con nosotros en caso de cualquier consulta o reserva.
+                </p>
+                <br>
+                <p>
+                    <b>Direccion</b>: Calle falsa 123
+                </p>
+                <p>
+                    <b>Telefono</b>: <a href="tel:+555-3226">Llamar</a>
+                </p>
+                <p>
+                    <b>Email</b>: <a href="mailto:agenciadespringfiels@gmail.com">Contactar</a>
+                </p>
+            </section>
+
+            <hr>
+
+            <section id="Redes">
+                <h2>Nuestras redes</h2>
+                <nav>
+                    <a href="https://www.instagram.com/popular/springfild/" target="_blank">Nuestro Instagram</a><br>
+                    <a href="https://www.facebook.com/LosSimpson/" target="_blank">Nuestro Facebook</a><br>
+                    <a href="https://x.com/TheSimpsons" target="_blank">Nuestro X</a><br>
+                    <a href="https://www.tiktok.com/tag/los_simpsons" target="_blank">Nuestro Tik Tok</a>
+                </nav>
+            </section>
+
+            <hr>
+
+            <section id="Encuesta">
+                <h2>Encuesta de satisfaccion</h2>
+
                 <form action="/enviar" method="post">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required placeholder="Apu Nahasapeemapetilon">
@@ -84,11 +117,29 @@
                     <textarea id="opinion" name="mensaje" rows="5" placeholder="¿Qué opinas de nuestra página o qué mejorarias?"></textarea>
                     <button type="submit">Enviar</button>
                 </form>
+
             </section>
+
             <hr>
+
+            <section id="Actividad">
+                <h2>Actividad con premio</h2>
+                <p>
+                    ¿Crees que es tu día de suerte? ¿Has sido un fanatico de Springfield y sus lugares pero no puedes pagar el viaje?
+                    <br>
+                    No te preocupes, tenemos una sorpresa para ti, participa en nuestra actividad con premio y demuestra tus conocimientos
+                    sobre la ciudad, tal vez seas el afortunado ganador de un viaje a Springfield totalmente <b>gratis</b> tras el sorteo de todos
+                    los ganadores de la actividad. ¡Participa y demuestra que eres un verdadero fanático de Springfield!
+                </p>
+                
+                <a href="Actividad.html">Participar en la actividad</a>
+            </section>
+
         </main>
+
         <footer>
             <p><small>Contactos de Springfield</small></p>
         </footer>
+
     </body>
 </html>

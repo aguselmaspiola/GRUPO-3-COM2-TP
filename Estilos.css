@@ -5,7 +5,6 @@
     --color_texto: #d5effe;
     --color_detalles: #eeea10;
     --color_detalles_2: #e277c7;
-    
 }
 
 @font-face {
@@ -65,6 +64,9 @@ main{
 section{
     padding: 1rem;
 }
+
+/*Al presionar cualquier enlace de "En esta página" se transporta a la section con id designada. Sin embargo, al ser el header
+sticky, el header tapa el inicio de la section, encontrar solución*/
 
 article{
     padding: 1rem;
@@ -198,4 +200,13 @@ div{
     flex-direction: row;
     justify-content: center;
     gap: 5rem;
+}
+
+.noche {
+    background-image: url("./IMAGENES/fondo_estrellas.jpg");
+    --color_fondo: #7046c4;
+    --color_fondo_sec:#8a66a4;
+    --color_texto: #b4c3b0;
+    --color_detalles: #a192cd;
+    --color_detalles_2: #2f36b3;
 }
