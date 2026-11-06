@@ -14,13 +14,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Minecrafter';
-    src: url("./FUENTES/Minecraft.ttf") format('truetype'); 
-    font-weight: normal;
-    font-style: normal;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -90,28 +83,24 @@ section{
 /*Al presionar cualquier enlace de "En esta página" se transporta a la section con id designada. Sin embargo, al ser el header
 sticky, el header tapa el inicio de la section, encontrar solución*/
 
-article{
-    padding: 1rem;
-
-}
+/*Separar header, main, footer con divs con margenes*/
 
 nav{
     list-style: none;
-    padding: 1rem;
+    padding: 2rem;
     margin-bottom: 1rem;
 
 }
 
 li{
     list-style: none;
-    font-family: 'Minecrafter';
     color: var(--color_texto);
-    font-size: 1rem;
+    font-size: 2rem;
     margin-bottom: 5px;
 }
 
 a{
-    font-family: 'Minecrafter';
+    font-size: 2rem;
     color: var(--color_detalles);
     list-style: none;
     text-decoration: none;
@@ -124,7 +113,7 @@ a:hover {
 h1{
     color:var(--color_detalles);
     font-family: 'Simpsons';
-    font-size: 2.5rem;
+    font-size: 5rem;
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -132,43 +121,40 @@ h1{
 h2{
     color:var(--color_detalles);
     font-family: 'Simpsons';
-    font-size: 2rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
 }
 
 h3{
     color:var(--color_detalles);
     font-family: 'Simpsons';
-    font-size: 1.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 p{
-    font-family: 'Minecrafter';
     color: var(--color_texto);
-    font-size: 1rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-
 input{
-    font-family: 'Minecrafter';
     background-color: var(--color_detalles_2);
     color: var(--color_texto);
     border-color: var(--color_detalles);
     border-style: solid;
+    font-size: 2rem;
 }
 
 select{
-    font-family: 'Minecrafter';
     background-color: var(--color_detalles_2);
     color: var(--color_texto);
     border-color: var(--color_detalles);
     border-style: solid;
+    font-size: 2rem;
 }
 
 textarea{
-    font-family: 'Minecrafter';
     background-color: var(--color_detalles_2);
     color: var(--color_texto);
     border-color: var(--color_detalles);
@@ -176,18 +162,18 @@ textarea{
     max-width: 90%;
     min-width: 10%;
     max-height: 120px;
+    font-size: 2rem;
 }
 
 button{
-    font-family: 'Minecrafter';
     background-color: var(--color_detalles_2);
     color: var(--color_detalles);
     border-color: var(--color_detalles);
     border-style: solid;
+    font-size: 2rem;
 }
 
 button:not(:disabled):hover{
-    font-family: 'Minecrafter';
     background-color: var(--color_texto);
     color: var(--color_detalles_2);
     border-color: var(--color_detalles);
@@ -196,9 +182,8 @@ button:not(:disabled):hover{
 }
 
 label{
-    font-family: 'Minecrafter';
     color: var(--color_texto);
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 hr{ 
@@ -236,3 +221,10 @@ div{
 .nocturno{
     background-image: url("./IMAGENES/fondo_headerNoche.jpg");
 }
+
+#texto_envio_encuesta{
+    display: none;
+    color: #1cdb7b;
+    font-size: large;
+}
+

@@ -3,6 +3,7 @@ const introduccion = document.getElementById("introduccion");
 const preguntas = document.getElementById("preguntas");
 const encuesta = document.getElementById("encuesta_satisfaccion");
 const boton_encuesta_sat = document.getElementById("boton_encuesta_satisfaccion")
+const texto_encuesta = document.getElementById("texto_envio_encuesta")
 
 function comenzar() {
     introduccion.style.display = "none";
@@ -11,11 +12,8 @@ function comenzar() {
 
 function fingir_envio(event) {
     event.preventDefault();
-    encuesta.reset();
-    boton_encuesta_sat.textContent = "Enviado :)";
-    boton_encuesta_sat.disabled = true;
-    boton_encuesta_sat.style.background = "var(--color_fondo)" 
-    boton_encuesta_sat.style.color = "var(--color_texto)"
+    encuesta.style.display = "none"
+    texto_encuesta.style.display = "block"
 }
 
 /*Los if son para que en caso de que el html no sea el qeu usa "comenzar trivia" 
