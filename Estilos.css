@@ -36,12 +36,34 @@ body{
 }
 
 header{
-    background-color: var(--color_fondo);
+    background-image: url("./IMAGENES/fondo_header.jpg");
+    background-size: cover;
+    background-position: center;
     color: var(--color_texto);
     border: 2px solid var(--color_detalles);
     grid-column: 2;
     grid-row: 1;
     position: sticky; top: 0%;
+}
+
+header nav{
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header nav a img{
+    border: none;
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    justify-content: space-evenly;
+}
+
+header nav a img:hover{
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px var(--color_detalles));
 }
 
 footer{
@@ -207,6 +229,10 @@ div{
     --color_fondo: #7046c4;
     --color_fondo_sec:#8a66a4;
     --color_texto: #b4c3b0;
-    --color_detalles: #a192cd;
-    --color_detalles_2: #2f36b3;
+    --color_detalles: #2f36b3;
+    --color_detalles_2: #a192cd;
+}
+
+.nocturno{
+    background-image: url("./IMAGENES/fondo_headerNoche.jpg");
 }
