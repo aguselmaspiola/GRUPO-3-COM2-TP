@@ -186,7 +186,7 @@ button{
     border-style: solid;
 }
 
-button:hover{
+button:not(:disabled):hover{
     font-family: 'Minecrafter';
     background-color: var(--color_texto);
     color: var(--color_detalles_2);

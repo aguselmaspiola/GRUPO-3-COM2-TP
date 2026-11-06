@@ -96,7 +96,7 @@
             <section id="Encuesta">
                 <h2>Encuesta de satisfaccion</h2>
 
-                <form action="/enviar" method="post">
+                <form id ="encuesta_satisfaccion" action="/enviar" method="post">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required placeholder="Apu Nahasapeemapetilon">
                     <br><br>
@@ -112,7 +112,7 @@
                     <br><br>
                     <label for="opinion">Opinion</label><br>
                     <textarea id="opinion" name="mensaje" rows="5" placeholder="¿Qué opinas de nuestra página o qué mejorarias?"></textarea>
-                    <button type="submit">Enviar</button>
+                    <button id="boton_encuesta_satisfaccion" type="submit">Enviar</button>
                 </form>
 
             </section>
@@ -137,6 +137,6 @@
         <footer>
             <p><small>Contactos de Springfield</small></p>
         </footer>
-
+        <script src="./JS/actividad.js" defer> </script>
     </body>
 </html>
