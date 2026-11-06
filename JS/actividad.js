@@ -1,19 +1,23 @@
 const boton = document.getElementById("comenzar-trivia");
 const introduccion = document.getElementById("introduccion");
-const preguntas = document.getElementById("preguntas");
-const error_opcion = document.getElementById("error_opcion")
+const confirmar_formulario = document.getElementById("confirmar_formulario")
+const questionario = document.getElementById("questionario")
+let respuestas_correctas = 0;
+
 const encuesta = document.getElementById("encuesta_satisfaccion");
-const texto_encuesta = document.getElementById("texto_envio_encuesta")
-const nvl_sat_encuesta_sat = document.getElementById("satisfaccion")
-const email = document.getElementById("email")
-const error_email = document.getElementById("error_mail")
-const nombre = document.getElementById("nombre")
-const error_nombre = document.getElementById("error_nombre")
+const texto_encuesta = document.getElementById("texto_envio_encuesta");
+const nvl_sat_encuesta_sat = document.getElementById("satisfaccion");
+const error_opcion = document.getElementById("error_opcion");
+const email = document.getElementById("email");
+const error_email = document.getElementById("error_mail");
+const nombre = document.getElementById("nombre");
+const error_nombre = document.getElementById("error_nombre");
 
 function comenzar() {
     introduccion.style.display = "none";
-    preguntas.style.display = "block";
+    questionario.style.display = "block";
 }
+
 
 function fingir_envio(event) {
     event.preventDefault();
@@ -34,17 +38,56 @@ function fingir_envio(event) {
         error_email.style.display = "block"
     }
 }
-
 function es_nombre_valido(nombre){
     return nombre !== ""
 }
-
 function es_opcion_valida(tipo_opcion){
     return tipo_opcion !== ""
 }
-
 function es_email_valido(email){
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+
+function chequear_sorteo(event){
+    event.preventDefault();
+    if(verificar_respuestas_validas()){
+        sumar_puntos()
+        bloquear_opciones()
+        confirmar_formulario.disabled = true
+        confirmar_formulario.textContent = "Enviado, gracias por participar :)"
+    }
+}
+
+function bloquear_opciones(){
+for (let i = 1; i<=10; i++){
+        const pregunta = document.getElementById("pregunta_"+i)
+        pregunta.disabled = true
+    }
+}
+function sumar_puntos(){
+    for (let i = 1; i<=10; i++){
+        const pregunta = document.getElementById("pregunta_"+i)
+        if (pregunta.value==="bien"){
+            respuestas_correctas++
+        }
+    }
+}
+
+function verificar_respuestas_validas(){
+    let respuestas_validas = 0
+    for (let i = 1; i<=10; i++){
+        const pregunta = document.getElementById("pregunta_"+i);
+        const error_opcion = document.getElementById("error_opcion_"+i);
+        error_opcion.style.display = "none"
+        if (!es_opcion_valida(pregunta.value)){
+        error_opcion.style.display = "block"
+        }
+        else {
+            respuestas_validas++;
+        }
+    }
+    return respuestas_validas === 10
 }
 
 /*Los if son para que en caso de que el html no sea el qeu usa "comenzar trivia" 
@@ -53,6 +96,11 @@ no falle ahi. Lo mismo con la encuesta de satisfaccion*/
 if (boton){
     boton.addEventListener("click", comenzar);
 }
+
 if (encuesta){
     encuesta.addEventListener("submit", fingir_envio);
+}
+
+if(preguntas){
+    preguntas.addEventListener("submit", chequear_sorteo)
 }

@@ -45,33 +45,37 @@
                 <button id="comenzar-trivia">¡Comenzar trivia!</button>
             </section>
 
-            <section id="preguntas" style="display: none;">
-                <form>
+            <section id="questionario" style="display: none;">
+                <form id="preguntas">
                     <label for="pregunta_1">Cual de estas tradiciones/celebraciones no es de springfild</label>
                     <select name="pregunta 1" id="pregunta_1">
+                        <option value=""></option>
                         <option value="mal">El dia de San Particio</option>
                         <option value="mal">El dia de apaleamiento</option>
                         <option value="bien">El dia amarillo</option>
                         <option value="mal">La quema de neumaticops</option>
                     </select>
-                    <br><br>
+                    <br><p id="error_opcion_1" class="texto_error">Tenes que seleccionar una opcion valida</p><br>
                     <label for="pregunta_2">Quien fue el fundador de springfild</label>
                     <select name="pregunta 2" id="pregunta_2">
+                        <option value=""></option>
                         <option value="mal">Jeremi Springfield</option>
                         <option value="bien">Jeremias Springfield</option>
                         <option value="mal">Shelbyville Manhattan</option>
                         <option value="mal">Quimby Springfield</option>
                     </select>
-                    <br><br>
+                    <br><p id="error_opcion_2" class="texto_error">Tenes que seleccionar una opcion valida</p><br>
                     <label for="pregunta_3">¿Cuanto cuesta el paquete estándar de nuestro viaje a Springfield si son 3 personas adultas y un bebe?</label>
                     <select name="pregunta 3" id="pregunta_3">
+                        <option value=""></option>
                         <option value="bien">$2800</option>
                         <option value="mal">$2400</option>
                         <option value="mal">$3200</option>
                     </select> 
-                    <br><br>
+                    <br><p id="error_opcion_3" class="texto_error">Tenes que seleccionar una opcion valida</p><br>
                     <label for="pregunta_4">Cual de estos no es un integrante de la familia simpson</label>
                     <select name="pregunta 4" id="pregunta_4">
+                        <option value=""></option>
                         <option value="mal">Homero</option>
                         <option value="mal">Hugo</option>
                         <option value="mal">Maggie</option>
@@ -79,50 +83,56 @@
                         <option value="mal">Bartolomeo</option>
                         <option value="mal">Abe</option>
                     </select>
-                    <br><br>
+                    <br><p id="error_opcion_4" class="texto_error">Tenes que seleccionar una opcion valida</p><br>
                     <label for="pregunta_5">A que hora se fundo nuestra agencia de viajes</label>
                     <select name="pregunta 5" id="pregunta_5">
+                        <option value=""></option>
                         <option value="bien">3:12 de la madrugada</option>
                         <option value="mal">5:47 de la tarde</option>
                     </select>
-                    <br><br>
+                    <br><p id="error_opcion_5" class="texto_error">Tenes que seleccionar una opcion valida</p><br>
                     <label for="pregunta_6">Como se llama el equipo local de baseball de Springfield</label>
                     <select name="pregunta 6" id="pregunta_6">
+                        <option value=""></option>
                         <option value="mal">Atomicos de Sprinfield</option>
                         <option value="bien">Isotopos de Sprinfield</option>
                         <option value="mal">Sariguellas de Sprinfield</option>
                         <option value="mal">Serpientes de Sprinfield</option>
                     </select>
-                    <br><br>
+                    <br><p id="error_opcion_6" class="texto_error">Tenes que seleccionar una opcion valida</p><br>
                     <label for="pregunta_7">Cual es el nombre del presentador del canal 6</label>
                     <select name="pregunta 7" id="pregunta_7">
+                        <option value=""></option>
                         <option value="mal">Krusty</option>
                         <option value="mal">Rainer</option>
                         <option value="mal">Tineli</option>
                         <option value="bien">Kent</option>
                     </select>
-                    <br><br>
+                    <br><p id="error_opcion_7" class="texto_error">Tenes que seleccionar una opcion valida</p><br>
                     <label for="pregunta_8">Que mensaje aparece al enviar la encuestra de satisfaccion</label>
                     <select name="pregunta 8" id="pregunta_8">
+                        <option value=""></option>
                         <option value="mal">Tu encuesta se envio con exito</option>
                         <option value="mal">Gracias por darnos tu opinion :)</option>
                         <option value="bien">Tu encuesta se envio con exito :)</option>
                     </select>
-                    <br><br>
+                    <br><p id="error_opcion_8" class="texto_error">Tenes que seleccionar una opcion valida</p><br>
                     <label for="pregunta_9">Es Miguel Agustn Castillo Boubet parte del equipo de desarollo de la pagina web</label>
                     <select name="pregunta 9" id="pregunta_9">
+                        <option value=""></option>
                         <option value="bien">Si</option>
                         <option value="mal">No</option>
                     </select>
-                    <br><br>
+                    <br><p id="error_opcion_9" class="texto_error">Tenes que seleccionar una opcion valida</p><br>
                     <label for="pregunta_10">Cual es la direccion de nuestra agencia</label>
                     <select name="pregunta 10" id="pregunta_10">
+                        <option value=""></option>
                         <option value="bien">Calle UNAHUR 6767</option>
                         <option value="mal">Calle falsa 123</option>
                         <option value="mal">Avenida siempre viva 2370</option>
                     </select>
-                    <br><br>
-                    <button type="submit">Confirmar formulario</button>
+                    <br><p id="error_opcion_10" class="texto_error">Tenes que seleccionar una opcion valida</p><br>
+                    <button id="confirmar_formulario" type="submit">Confirmar formulario</button>
                 </form>
             </section>
 
