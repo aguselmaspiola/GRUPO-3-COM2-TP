@@ -1,7 +1,12 @@
 const boton = document.getElementById("comenzar-trivia");
 const introduccion = document.getElementById("introduccion");
-const confirmar_formulario = document.getElementById("confirmar_formulario")
-const questionario = document.getElementById("questionario")
+const confirmar_formulario = document.getElementById("confirmar_formulario");
+const questionario = document.getElementById("questionario");
+const ganador = document.getElementById("ganador");
+const perdedor = document.getElementById("perdedor");
+const revizar_respuestas = document.querySelectorAll(".revizar");
+const volver_a_resultado = document.getElementById("premio");
+const preguntas = document.getElementById("preguntas");
 let respuestas_correctas = 0;
 
 const encuesta = document.getElementById("encuesta_satisfaccion");
@@ -14,10 +19,11 @@ const nombre = document.getElementById("nombre");
 const error_nombre = document.getElementById("error_nombre");
 
 function comenzar() {
-    introduccion.style.display = "none";
-    questionario.style.display = "block";
+    introduccion.style.display = "none"
+    perdedor.style.display = "none"
+    ganador.style.display = "none"
+    questionario.style.display = "block"
 }
-
 
 function fingir_envio(event) {
     event.preventDefault();
@@ -48,17 +54,28 @@ function es_email_valido(email){
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-
 function chequear_sorteo(event){
     event.preventDefault();
+    respuestas_correctas = 0
     if(verificar_respuestas_validas()){
         sumar_puntos()
         bloquear_opciones()
         confirmar_formulario.disabled = true
         confirmar_formulario.textContent = "Enviado, gracias por participar :)"
+        post_envio_questionario()
     }
 }
-
+function post_envio_questionario(){
+    if (respuestas_correctas>=7){
+        questionario.style.display = "none"
+        ganador.style.display = "block"
+    }
+    else{
+        questionario.style.display = "none"
+        perdedor.style.display = "block"
+    }
+    volver_a_resultado.style.display = "block"
+}
 function bloquear_opciones(){
 for (let i = 1; i<=10; i++){
         const pregunta = document.getElementById("pregunta_"+i)
@@ -73,7 +90,6 @@ function sumar_puntos(){
         }
     }
 }
-
 function verificar_respuestas_validas(){
     let respuestas_validas = 0
     for (let i = 1; i<=10; i++){
@@ -103,4 +119,12 @@ if (encuesta){
 
 if(preguntas){
     preguntas.addEventListener("submit", chequear_sorteo)
+}
+
+if(volver_a_resultado){
+    volver_a_resultado.addEventListener("click", post_envio_questionario)
+}
+
+if(revizar_respuestas){
+    revizar_respuestas.forEach (boton => {boton.addEventListener("click", comenzar)})
 }
