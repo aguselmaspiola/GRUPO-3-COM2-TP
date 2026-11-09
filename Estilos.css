@@ -89,7 +89,6 @@ nav{
     list-style: none;
     padding: 2rem;
     margin-bottom: 1rem;
-
 }
 
 li{
@@ -232,4 +231,21 @@ div{
     display: none;
     color: red;
     font-size: 1.5rem;
+}
+
+.display_menu_links{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.display_menu_links img{
+    width: 100%;
+    height: auto;
+    border: none;
+}
+
+.display_menu_links a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

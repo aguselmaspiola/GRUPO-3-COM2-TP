@@ -1,4 +1,5 @@
 const boton = document.getElementById("comenzar-trivia");
+const encuesta = document.getElementById("encuesta_satisfaccion");
 const introduccion = document.getElementById("introduccion");
 const confirmar_formulario = document.getElementById("confirmar_formulario");
 const questionario = document.getElementById("questionario");
@@ -9,23 +10,16 @@ const volver_a_resultado = document.getElementById("premio");
 const preguntas = document.getElementById("preguntas");
 let respuestas_correctas = 0;
 
-const encuesta = document.getElementById("encuesta_satisfaccion");
-const texto_encuesta = document.getElementById("texto_envio_encuesta");
-const nvl_sat_encuesta_sat = document.getElementById("satisfaccion");
-const error_opcion = document.getElementById("error_opcion");
-const email = document.getElementById("email");
-const error_email = document.getElementById("error_mail");
-const nombre = document.getElementById("nombre");
-const error_nombre = document.getElementById("error_nombre");
-
-function comenzar() {
-    introduccion.style.display = "none"
-    perdedor.style.display = "none"
-    ganador.style.display = "none"
-    questionario.style.display = "block"
-}
 
 function fingir_envio(event) {
+    const texto_encuesta = document.getElementById("texto_envio_encuesta");
+    const nvl_sat_encuesta_sat = document.getElementById("satisfaccion");
+    const error_opcion = document.getElementById("error_opcion");
+    const email = document.getElementById("email");
+    const error_email = document.getElementById("error_mail");
+    const nombre = document.getElementById("nombre");
+    const error_nombre = document.getElementById("error_nombre");
+
     event.preventDefault();
     error_opcion.style.display = "none"
     error_email.style.display = "none"
@@ -54,6 +48,12 @@ function es_email_valido(email){
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function comenzar() {
+    introduccion.style.display = "none"
+    perdedor.style.display = "none"
+    ganador.style.display = "none"
+    questionario.style.display = "block"
+}
 function chequear_sorteo(event){
     event.preventDefault();
     respuestas_correctas = 0
@@ -63,7 +63,12 @@ function chequear_sorteo(event){
         confirmar_formulario.disabled = true
         confirmar_formulario.textContent = "Enviado, gracias por participar :)"
         post_envio_questionario()
+        mostrar_preguntas_correctas()
     }
+}
+function mostrar_preguntas_correctas(){
+    const preguntas_correctas = document.getElementById("Preguntas_correctas");
+    preguntas_correctas.textContent = `Tubiste ${respuestas_correctas}/10`
 }
 function post_envio_questionario(){
     if (respuestas_correctas>=7){
