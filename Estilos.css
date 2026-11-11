@@ -249,3 +249,7 @@ div{
     flex-direction: column;
     align-items: center;
 }
+#accordionTradiciones {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-border-color:var(--color_detalles_2);
+}
