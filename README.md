@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ GRUPO 3 ⚡
+#  GRUPO 3 
 
 ### `// 2do Parcial de Lenguajes Informaticos //`
 
@@ -9,7 +9,7 @@
 
 ---
 
-## 👥 Integrantes
+##  Integrantes
 
 
 - **Felipe Sebastián Crespo** 
@@ -19,7 +19,7 @@
 - **Agustín Alejandro Bouvet** 
 
 ---
-## 🛠️ Stack / Herramientas
+##  Stack / Herramientas
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
