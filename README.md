@@ -1,5 +1,5 @@
 <div align="center">
-
+![Logo](.IMAGENES/logo UNAHUR.jpg)
 #  GRUPO 3 
 
 ### `// 2do Parcial de Lenguajes Informaticos //`
@@ -13,7 +13,7 @@
 
 
 - **Felipe Sebastián Crespo** 
-- **Miguel Agustín Castillo Céspedes** 
+- **Miguel Agustín Castillo Cespedes** 
 - **Luca Patricio González Ferrara** 
 - **Benjamín David Santacruz** 
 - **Agustín Alejandro Bouvet** 
