@@ -1,13 +1,14 @@
 const boton = document.getElementById("comenzar-trivia");
 const encuesta = document.getElementById("encuesta_satisfaccion");
 const introduccion = document.getElementById("introduccion");
-const confirmar_formulario = document.getElementById("confirmar_formulario");
 const questionario = document.getElementById("questionario");
 const ganador = document.getElementById("ganador");
 const perdedor = document.getElementById("perdedor");
 const revizar_respuestas = document.querySelectorAll(".revizar");
 const volver_a_resultado = document.getElementById("premio");
-const preguntas = document.getElementById("preguntas");
+const preguntas_questionario = document.getElementById("preguntas_questionario");
+const preguntas = document.querySelectorAll(".pregunta")
+const texto_error = document.querySelectorAll(".texto_error")
 let respuestas_correctas = 0;
 
 
@@ -55,6 +56,7 @@ function comenzar() {
     questionario.style.display = "block"
 }
 function chequear_sorteo(event){
+    const confirmar_formulario = document.getElementById("confirmar_formulario");
     event.preventDefault();
     respuestas_correctas = 0
     if(verificar_respuestas_validas()){
@@ -67,8 +69,8 @@ function chequear_sorteo(event){
     }
 }
 function mostrar_preguntas_correctas(){
-    const preguntas_correctas = document.getElementById("Preguntas_correctas");
-    preguntas_correctas.textContent = `Tubiste ${respuestas_correctas}/10`
+    const display_preguntas_correctas = document.getElementById("display_preguntas_correctas");
+    display_preguntas_correctas.textContent = `Tubiste ${respuestas_correctas}/10`
 }
 function post_envio_questionario(){
     if (respuestas_correctas>=7){
@@ -82,54 +84,41 @@ function post_envio_questionario(){
     volver_a_resultado.style.display = "block"
 }
 function bloquear_opciones(){
-for (let i = 1; i<=10; i++){
-        const pregunta = document.getElementById("pregunta_"+i)
+    preguntas.forEach (pregunta => {
         pregunta.disabled = true
-    }
+    });
 }
 function sumar_puntos(){
-    for (let i = 1; i<=10; i++){
-        const pregunta = document.getElementById("pregunta_"+i)
-        if (pregunta.value==="bien"){
-            respuestas_correctas++
+    preguntas.forEach(pregunta => {
+        if(pregunta.value === "bien"){
+            respuestas_correctas++;
         }
-    }
+    });
 }
 function verificar_respuestas_validas(){
     let respuestas_validas = 0
-    for (let i = 1; i<=10; i++){
-        const pregunta = document.getElementById("pregunta_"+i);
-        const error_opcion = document.getElementById("error_opcion_"+i);
-        error_opcion.style.display = "none"
-        if (!es_opcion_valida(pregunta.value)){
-        error_opcion.style.display = "block"
-        }
-        else {
+    preguntas.forEach ((pregunta, nro) =>{
+        if (es_opcion_valida(pregunta.value)){
+            texto_error[nro].style.display = "none"
             respuestas_validas++;
         }
-    }
+        else{
+            texto_error[nro].style.display = "block"
+        }
+    });
     return respuestas_validas === 10
 }
 
 /*Los if son para que en caso de que el html no sea el qeu usa "comenzar trivia" 
 no falle ahi. Lo mismo con la encuesta de satisfaccion*/
 
-if (boton){
-    boton.addEventListener("click", comenzar);
-}
-
 if (encuesta){
     encuesta.addEventListener("submit", fingir_envio);
 }
 
-if(preguntas){
-    preguntas.addEventListener("submit", chequear_sorteo)
-}
-
-if(volver_a_resultado){
+if (boton){
+    boton.addEventListener("click", comenzar);
+    preguntas_questionario.addEventListener("submit", chequear_sorteo)
     volver_a_resultado.addEventListener("click", post_envio_questionario)
-}
-
-if(revizar_respuestas){
     revizar_respuestas.forEach (boton => {boton.addEventListener("click", comenzar)})
 }
