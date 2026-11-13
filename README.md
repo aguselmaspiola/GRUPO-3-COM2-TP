@@ -1,5 +1,4 @@
 <div align="center">
-![Logo](.img/IMAGENES/logo UNAHUR.jpg)
 #  GRUPO 3 
 
 ### `// 2do Parcial de Lenguajes Informaticos //`
