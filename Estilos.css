@@ -37,6 +37,7 @@ header{
     grid-column: 2;
     grid-row: 1;
     position: sticky; top: 0%;
+    z-index: 100;
 }
 
 header nav{
@@ -249,7 +250,12 @@ div{
     flex-direction: column;
     align-items: center;
 }
-#accordionTradiciones {--bs-accordion-bg: transparent;
-    --bs-accordion-border-color: transparent;
+
+.accordion{
+    --bs-accordion-bg: var(--color_fondo);
+    --bs-accordion-border-width: 0px;
+    --bs-accordion-btn-color: var(--color_detalles_2);
+    --bs-accordion-active-color: var(--color_detalles_2);
+    --bs-accordion-btn-bg: var(--color_detalles);
+    --bs-accordion-active-bg: var(--color_fondo_sec);
 }
- 

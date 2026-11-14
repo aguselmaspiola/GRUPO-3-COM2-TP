@@ -4,16 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Lugares Springfield</title>
-        <link rel="stylesheet" href="Estilos.css">
         <link rel="icon" href="./IMAGENES/rosquilla_LogoPagina.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
-         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="Estilos.css">
     </head>
 
     <body>
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <header>
             <h1>TourField</h1>
                 <nav class="display_menu_links">
@@ -51,132 +50,193 @@
 
             <hr>
             
-            <section id="Bar">
-                    <h3>El Bar de Moe</h3>
-                    <p>
-                        El <i>Bar de Moe</i> es el lugar perfecto para relajarse y disfrutar de una bebida refrescante.
-                        Es conocido por su ambiente acogedor y su servicio amable.
-                    </p>
-                    <p>Cosas que se pueden hacer en el Bar de Moe:</p>
-                    <ul>
-                        <li><p>Tomarte un buen Fernandito.</p></li>
-                        <li><p>Desahogarte de guapo con Moe.</p></li>
-                        <li><p>Cagarte bien a trompadas con cualquier gil.</p></li>
-                    </ul>
-                    <div class="imagenes">
-                        <img src="./IMAGENES/tabernademoe.jpg" alt="El Bar de Moe" width="600" height="600">
-                        <img src="./IMAGENES/lospibesenlodemoe.jpg" alt="los amigos de homero en el bar de moe" width="600" height="600">          
-                    </div>
-            </section>
-            
-            <hr>
-            
-            <section id="Kwik-E-Mart">
-                    <h3>Kwik-E-Mart</h3>
-                    <p>
-                        El <i>Kwik-E-Mart</i> es la tienda de conveniencia más famosa de Springfield. Aquí puedes encontrar una gran
-                        variedad de productos, desde snacks hasta artículos de primera necesidad, el encargado Apu te recibirá con una gran
-                        sonrisa.
-                    </p>
-                    <p>Cosas que se pueden hacer en el Kwik-E-Mart:</p>
-                    <ul>
-                        <li><p>Comprar papelillos.</p></li>
-                        <li><p>Comprar comida vencida.</p></li>
-                        <li><p>Cagar a puteadas al vendedor Apu.</p></li>
-                        <li><p>Hacerte compa del Apu y ganarte un heladito.</p></li>
-                    </ul>
-                    <div class="imagenes">
-                        <img src="./IMAGENES/kwikemarkt.jpg" alt="Kwik-E-Mart" width="600" height="600">
-                        <img src="./IMAGENES/Apu.jpg" alt="Vendedor Apu" width="600" height="600">
-                    </div>
-            </section> 
-            
-            <hr>
-            
-            <section id="PlantaNuclear">
-                    <h3>Planta Nuclear</h3>
-                    <p>
-                        La <i>Planta Nuclear</i> es el pulmon de la electricidad de Springfield. Aquí se genera la energía que alimenta a toda la
-                        ciudad, su humilde dueño, Mr.Burns, ha demostrado que su central no daña el medio ambiente en absoluto.
-                    </p>
-                    <p>Cosas que se pueden hacer en la Planta Nuclear:</p>
-                    <ul>
-                        <li><p>Presionar botones al azar.</p></li>
-                        <li><p>Jugar con uranio.</p></li>
-                        <li><p>Hacerlo por ella.</p></li>
-                    </ul>
-                    <div class="imagenes">
-                        <img src="./IMAGENES/planta_nuclear.jpg" alt="Planta Nuclear" width="600" height="600">
-                        <img src="./IMAGENES/burns.jpg" alt="Dueño de la Planta Nuclear" width="600" height="600">
-                    </div>
-            </section>
-
-            <hr>
-
-            <section id="Escuela">
-                <h3>Escuela Primaria de Springfield</h3>
-                <p>
-                    La <i>Escuela Primaria de Springfield</i> es el lugar donde los niños de la ciudad reciben su educación. Dirigida por el
-                    estricto director Skinner, la escuela ofrece un ambiente seguro y educativo para los estudiantes garantizado por los
-                    maestros y conserjes que ofrece la institución.
-                </p>
-                <p>Cosas que se pueden hacer en la Escuela Primaria de Springfield:</p>
-                <ul>
-                    <li><p>Hacer trampa en las pruebas.</p></li>
-                    <li><p>Hacerle bullying a Milhouse.</p></li>
-                    <li><p>Hacerle una prank a Skinner.</p></li>
-                </ul>
-                <div class="imagenes">
-                    <img src="./IMAGENES/escuela.jpg" alt="Escuela Primaria de Springfield" width="600" height="600">
-                    <img src="./IMAGENES/aula.jpg" alt="Aula de la Escuela Primaria" width="600" height="600">
+            <div class="accordion" id="accordion_lugares">
+                <div class="accordion-item">
+                    <section id="Bar">
+                            <h3 class="accordion-header" id="accordion_bar">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    El Bar de Moe
+                                </button>
+                            </h3>
+                            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="accordion_bar" data-bs-parent="#accordion_lugares">
+                                <div class="accordion-body">
+                                    <p>
+                                        El <i>Bar de Moe</i> es el lugar perfecto para relajarse y disfrutar de una bebida refrescante.
+                                        Es conocido por su ambiente acogedor y su servicio amable.
+                                    </p>
+                                    <p>Cosas que se pueden hacer en el Bar de Moe:</p>
+                                    <ul>
+                                        <li><p>Tomarte un buen Fernandito.</p></li>
+                                        <li><p>Desahogarte de guapo con Moe.</p></li>
+                                        <li><p>Cagarte bien a trompadas con cualquier gil.</p></li>
+                                    </ul>
+                                    <div class="imagenes">
+                                        <img src="./IMAGENES/tabernademoe.jpg" alt="El Bar de Moe" width="600" height="600">
+                                        <img src="./IMAGENES/lospibesenlodemoe.jpg" alt="los amigos de homero en el bar de moe" width="600" height="600">          
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
                 </div>
-            </section>
-
-            <hr>
-
-            <section id="Krusty">
-                <h3>Krusty Burger</h3>
-                <p>
-                    <i>Krusty Burger</i> es la cadena de comida rápida más popular de Springfield. Aquí puedes disfrutar de deliciosas
-                    hamburguesas y papas fritas, mientras te diviertes con el payaso Krusty y su equipo.
-                </p>
-                <p>Cosas que se pueden hacer en Krusty Burger:</p>
-                <ul>
-                    <li><p>Comerte una Big Krusty.</p></li>
-                    <li><p>Reirte con el payasito Krusty y su fiel amigo el simio Teeny.</p></li>
-                    <li><p>Reconsiderar los años de vida perdidos por el colesterol.</p></li>
-                </ul>
-                <div class="imagenes">
-                    <img src="./IMAGENES/krusty_burger.webp" alt="Krusty Burger" width="600" height="600">
-                    <img src="./IMAGENES/krusty_payaso.jpeg" alt="Payaso Krusty" width="600" height="600">
+                
+                <hr>
+                
+                <div class="accordion-item">
+                    <section id="Kwik-E-Mart">
+                        <h3 class="accordion-header" id="accordion_minisup">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Kwik-E-Mart
+                            </button>
+                        </h3>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="accordion_minisup" data-bs-parent="#accordion_lugares">
+                            <div class="accordion-body">
+                                <p>
+                                    El <i>Kwik-E-Mart</i> es la tienda de conveniencia más famosa de Springfield. Aquí puedes encontrar una gran
+                                    variedad de productos, desde snacks hasta artículos de primera necesidad, el encargado Apu te recibirá con una gran
+                                    sonrisa.
+                                </p>
+                                <p>Cosas que se pueden hacer en el Kwik-E-Mart:</p>
+                                <ul>
+                                    <li><p>Comprar papelillos.</p></li>
+                                    <li><p>Comprar comida vencida.</p></li>
+                                    <li><p>Cagar a puteadas al vendedor Apu.</p></li>
+                                    <li><p>Hacerte compa del Apu y ganarte un heladito.</p></li>
+                                </ul>
+                                <div class="imagenes">
+                                    <img src="./IMAGENES/kwikemarkt.jpg" alt="Kwik-E-Mart" width="600" height="600">
+                                    <img src="./IMAGENES/Apu.jpg" alt="Vendedor Apu" width="600" height="600">
+                                </div>
+                            </div>
+                        </div>
+                    </section> 
                 </div>
-            </section>
 
-            <hr>
+                <hr>
 
-            <section id="Iglesia">
-                <h3>Iglesia de Springfield</h3>
-                <p>
-                    La <i>Iglesia de Springfield</i> es un lugar de culto y comunidad para los habitantes de la ciudad. Aquí se celebran
-                    ceremonias religiosas y eventos comunitarios, liderados por el reverendo Lovejoy.
-                </p>
-                <p>Cosas que se pueden hacer en la Iglesia de Springfield:</p>
-                <ul>
-                    <li><p>Rezarle al gauchito gil.</p></li>
-                    <li><p>Pedir donaciones demás al Sr. Burns.</p></li>
-                    <li><p>Confesar lo que hiciste el 12 de septiembre del 2007 a las 3:12 de la madrugada.</p></li>
-                </ul>
-                <div class="imagenes">
-                    <img src="./IMAGENES/iglesia.webp" alt="Iglesia de Springfield" width="600" height="600">
-                    <img src="./IMAGENES/misa.jpg" alt="Misa en la Iglesia de Springfield" width="600" height="600">
+                <div class="accordion-item">
+                    <section id="PlantaNuclear">
+                        <h3 class="accordion-header" id="accordion_nuclear">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Planta Nuclear
+                            </button>
+                        </h3>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="accordion_nuclear" data-bs-parent="#accordion_lugares">
+                            <div class="accordion-body">
+                                <p>
+                                    La <i>Planta Nuclear</i> es el pulmon de la electricidad de Springfield. Aquí se genera la energía que alimenta a toda la
+                                    ciudad, su humilde dueño, Mr.Burns, ha demostrado que su central no daña el medio ambiente en absoluto.
+                                </p>
+                                <p>Cosas que se pueden hacer en la Planta Nuclear:</p>
+                                <ul>
+                                    <li><p>Presionar botones al azar.</p></li>
+                                    <li><p>Jugar con uranio.</p></li>
+                                    <li><p>Hacerlo por ella.</p></li>
+                                </ul>
+                                <div class="imagenes">
+                                    <img src="./IMAGENES/planta_nuclear.jpg" alt="Planta Nuclear" width="600" height="600">
+                                    <img src="./IMAGENES/burns.jpg" alt="Dueño de la Planta Nuclear" width="600" height="600">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
 
+                <hr>
+
+                <div class="accordion-item">
+                    <section id="Escuela">
+                        <h3 class="accordion-header" id="accordion_escuela">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                Escuela Primaria de Springfield
+                            </button>
+                        </h3>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="accordion_escuela" data-bs-parent="#accordion_lugares">
+                            <div class="accordion-body">
+                                <p>
+                                    La <i>Escuela Primaria de Springfield</i> es el lugar donde los niños de la ciudad reciben su educación. Dirigida por el
+                                    estricto director Skinner, la escuela ofrece un ambiente seguro y educativo para los estudiantes garantizado por los
+                                    maestros y conserjes que ofrece la institución.
+                                </p>
+                                <p>Cosas que se pueden hacer en la Escuela Primaria de Springfield:</p>
+                                <ul>
+                                    <li><p>Hacer trampa en las pruebas.</p></li>
+                                    <li><p>Hacerle bullying a Milhouse.</p></li>
+                                    <li><p>Hacerle una prank a Skinner.</p></li>
+                                </ul>
+                                <div class="imagenes">
+                                    <img src="./IMAGENES/escuela.jpg" alt="Escuela Primaria de Springfield" width="600" height="600">
+                                    <img src="./IMAGENES/aula.jpg" alt="Aula de la Escuela Primaria" width="600" height="600">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <hr>
+
+                <div class="accordion-item">
+                    <section id="Krusty">
+                        <h3 class="accordion-header" id="accordion_krusty">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                Krusty Burger
+                            </button>
+                        </h3>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="accordion_krusty" data-bs-parent="#accordion_lugares">
+                            <div class="accordion-body">
+                                <p>
+                                    <i>Krusty Burger</i> es la cadena de comida rápida más popular de Springfield. Aquí puedes disfrutar de deliciosas
+                                    hamburguesas y papas fritas, mientras te diviertes con el payaso Krusty y su equipo.
+                                </p>
+                                <p>Cosas que se pueden hacer en Krusty Burger:</p>
+                                <ul>
+                                    <li><p>Comerte una Big Krusty.</p></li>
+                                    <li><p>Reirte con el payasito Krusty y su fiel amigo el simio Teeny.</p></li>
+                                    <li><p>Reconsiderar los años de vida perdidos por el colesterol.</p></li>
+                                </ul>
+                                <div class="imagenes">
+                                    <img src="./IMAGENES/krusty_burger.webp" alt="Krusty Burger" width="600" height="600">
+                                    <img src="./IMAGENES/krusty_payaso.jpeg" alt="Payaso Krusty" width="600" height="600">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <hr>
+
+                <div class="accordion-item">
+                    <section id="Iglesia">
+                        <h3 class="accordion-header" id="accordion_iglesia">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            Iglesia de Springfield
+                            </button>
+                        </h3>
+                        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="accordion_iglesia" data-bs-parent="#accordion_lugares">
+                            <div class="accordion-body">
+                                <p>
+                                    La <i>Iglesia de Springfield</i> es un lugar de culto y comunidad para los habitantes de la ciudad. Aquí se celebran
+                                    ceremonias religiosas y eventos comunitarios, liderados por el reverendo Lovejoy.
+                                </p>
+                                <p>Cosas que se pueden hacer en la Iglesia de Springfield:</p>
+                                <ul>
+                                    <li><p>Rezarle al gauchito gil.</p></li>
+                                    <li><p>Pedir donaciones demás al Sr. Burns.</p></li>
+                                    <li><p>Confesar lo que hiciste el 12 de septiembre del 2007 a las 3:12 de la madrugada.</p></li>
+                                </ul>
+                                <div class="imagenes">
+                                    <img src="./IMAGENES/iglesia.webp" alt="Iglesia de Springfield" width="600" height="600">
+                                    <img src="./IMAGENES/misa.jpg" alt="Misa en la Iglesia de Springfield" width="600" height="600">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </main>
 
         <footer>
             <p><small>Sitios de Springfield</small></p>
         </footer>
 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
     </body>
 </html>
