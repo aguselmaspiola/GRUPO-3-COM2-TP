@@ -279,11 +279,11 @@ nav img {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 nav a.actual img {
-  border-color: #1F75FE;
-  box-shadow: 0 0 10px #1F75FE;
+  border-color: #ffffff;
+  box-shadow: 0 0 10px #ffffff;
   transform: scale(1.15);
 }
 
 nav a.actual {
-  color: #1F75FE;
+  color: #ffffff;
 }
