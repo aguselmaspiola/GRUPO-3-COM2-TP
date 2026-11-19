@@ -268,7 +268,7 @@ nav img {
   height: 50px;
   border-radius: 50%;
   border: 3px solid #000;
-  background-color: #fff;
+  background-color: #e5ff00;
   vertical-align: middle;
   margin-right: 8px;
 }
@@ -277,4 +277,13 @@ nav img {
   border-radius: 20px;
   padding: 5px 15px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+nav a.actual img {
+  border-color: #1F75FE;
+  box-shadow: 0 0 10px #1F75FE;
+  transform: scale(1.15);
+}
+
+nav a.actual {
+  color: #1F75FE;
 }
