@@ -287,3 +287,11 @@ nav a.actual img {
 nav a.actual {
   color: #ffffff;
 }
+
+.respuesta_correcta{
+    color:greenyellow;
+}
+
+.respuesta_incorrecta{
+    color: red;
+}

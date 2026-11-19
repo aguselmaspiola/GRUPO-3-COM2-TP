@@ -8,7 +8,8 @@ const revizar_respuestas = document.querySelectorAll(".revizar");
 const volver_a_resultado = document.getElementById("premio");
 const preguntas_questionario = document.getElementById("preguntas_questionario");
 const preguntas = document.querySelectorAll(".pregunta")
-const texto_error = document.querySelectorAll(".texto_error")
+const texto_error = document.querySelectorAll(".texto_error");
+const estado_respuestas = document.querySelectorAll(".estado_respuesta");
 let respuestas_correctas = 0;
 
 
@@ -71,6 +72,16 @@ function chequear_sorteo(event){
 function mostrar_preguntas_correctas(){
     const display_preguntas_correctas = document.getElementById("display_preguntas_correctas");
     display_preguntas_correctas.textContent = `Tubiste ${respuestas_correctas}/10`
+    preguntas.forEach((pregunta, nro) => {
+        if(pregunta.value === "bien"){
+            estado_respuestas[nro].textContent= "Correcta";
+            estado_respuestas[nro].classList.add("respuesta_correcta");
+        }
+        else{
+            estado_respuestas[nro].textContent= "Incorrecta";
+            estado_respuestas[nro].classList.add("respuesta_incorrecta");
+        }
+    });
 }
 function post_envio_questionario(){
     if (respuestas_correctas>=7){
