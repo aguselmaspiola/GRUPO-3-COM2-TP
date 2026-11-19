@@ -4,7 +4,7 @@ const introduccion = document.getElementById("introduccion");
 const questionario = document.getElementById("questionario");
 const ganador = document.getElementById("ganador");
 const perdedor = document.getElementById("perdedor");
-const revizar_respuestas = document.querySelectorAll(".revizar");
+const revizar_respuestas = document.querySelectorAll(".revisar");
 const volver_a_resultado = document.getElementById("premio");
 const preguntas_questionario = document.getElementById("preguntas_questionario");
 const preguntas = document.querySelectorAll(".pregunta")
@@ -48,7 +48,21 @@ function es_opcion_valida(tipo_opcion){
 function es_email_valido(email){
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
+const barra_progreso = document.getElementById("barra_progreso");
+const contenedor_progreso = document.getElementById("contenedor_progreso");
 
+function actualizar_progreso() {
+    let contestadas = 0;
+    preguntas.forEach(pregunta => {
+        if (es_opcion_valida(pregunta.value)) {
+            contestadas++;
+        }
+    });
+    const porcentaje = Math.round((contestadas / preguntas.length) * 100);
+    barra_progreso.style.width = porcentaje + "%";
+    barra_progreso.textContent = porcentaje + "%";
+    contenedor_progreso.setAttribute("aria-valuenow", porcentaje);
+}
 function comenzar() {
     introduccion.style.display = "none"
     perdedor.style.display = "none"
@@ -70,7 +84,7 @@ function chequear_sorteo(event){
 }
 function mostrar_preguntas_correctas(){
     const display_preguntas_correctas = document.getElementById("display_preguntas_correctas");
-    display_preguntas_correctas.textContent = `Tubiste ${respuestas_correctas}/10`
+    display_preguntas_correctas.textContent = `Tuviste ${respuestas_correctas}/10`
 }
 function post_envio_questionario(){
     if (respuestas_correctas>=7){
@@ -109,7 +123,7 @@ function verificar_respuestas_validas(){
     return respuestas_validas === 10
 }
 
-/*Los if son para que en caso de que el html no sea el qeu usa "comenzar trivia" 
+/*Los if son para que en caso de que el html no sea el que usa "comenzar trivia" 
 no falle ahi. Lo mismo con la encuesta de satisfaccion*/
 
 if (encuesta){
@@ -121,4 +135,8 @@ if (boton){
     preguntas_questionario.addEventListener("submit", chequear_sorteo)
     volver_a_resultado.addEventListener("click", post_envio_questionario)
     revizar_respuestas.forEach (boton => {boton.addEventListener("click", comenzar)})
+     preguntas.forEach(pregunta => {
+        pregunta.addEventListener("change", actualizar_progreso)
+    });
 }
+

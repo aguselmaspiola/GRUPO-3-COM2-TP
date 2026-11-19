@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Springfield</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="Estilos.css">
         <link rel="icon" href="./IMAGENES/rosquilla_LogoPaginaNoche.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,8 +50,12 @@
             </section>
 
             <section id="questionario" style="display: none;">
+                 <div id="contenedor_progreso" class="progress mb-4" role="progressbar"
+                aria-label="Progreso de la trivia" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div id="barra_progreso" class="progress-bar progress-bar-striped progress-bar-animated"
+                 style="width: 0%">0%</div>
+                </div>
                 <form id="preguntas_questionario">
-
                     <label for="pregunta_1">Cual de estas tradiciones/celebraciones no es de springfild</label>
                     <select class="pregunta" name="pregunta_1">
                         <option value=""></option>
@@ -120,16 +125,16 @@
                     </select>
                     <br><p class="texto_error">Tenes que seleccionar una opcion valida</p><br>
 
-                    <label for="pregunta_8">Que mensaje aparece al enviar la encuestra de satisfaccion</label>
+                    <label for="pregunta_8">que personaje te atiende en el kwikmart</label>
                     <select class="pregunta" name="pregunta_8">
                         <option value=""></option>
-                        <option value="mal">Tu encuesta se envio con exito</option>
-                        <option value="mal">Gracias por darnos tu opinion :)</option>
-                        <option value="bien">Tu encuesta se envio con exito :)</option>
+                        <option value="mal"> homero simpson</option>
+                        <option value="mal"> Ned Flanders </option>
+                        <option value="bien"> Apu Nahasapeemapetilon </option>
                     </select>
                     <br><p class="texto_error">Tenes que seleccionar una opcion valida</p><br>
 
-                    <label for="pregunta_9">Es Miguel Agustn Castillo Boubet parte del equipo de desarollo de la pagina web</label>
+                    <label for="pregunta_9">quien es el profesor </label>
                     <select class="pregunta" name="pregunta_9">
                         <option value=""></option>
                         <option value="bien">Si</option>
@@ -154,12 +159,12 @@
             
             <section id="ganador" style="display: none;">
                 <h2>GENIO</h2>
-                <button class="revizar">revizar</button>
+                <button class="revisar">revisar</button>
             </section>
             
             <section id="perdedor" style="display: none;">
                 <h2>bot</h2>
-                <button class="revizar" >revizar</button>
+                <button class="revisar" >revisar</button>
             </section>
             
             <script src="./JS/actividad.js" defer> </script>

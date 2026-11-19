@@ -287,3 +287,8 @@ nav a.actual img {
 nav a.actual {
   color: #1F75FE;
 }
+.progress-bar {
+    transition: width 0.4s ease;
+    background-image: linear-gradient(45deg, var(--color_detalles_2), var(--color_detalles));
+    
+}
