@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Springfield</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="Estilos.css">
         <link rel="icon" href="./IMAGENES/rosquilla_LogoPagina.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,6 +94,7 @@
                             Un propio equipo de baseball llamado los <i>Isótopos de Springfield</i>, que representa a la ciudad en 
                             competiciones deportivas. ¡No te pierdas sus emocionantes partidos y apoya a tu equipo local!
                         </p>
+                       
                         <div class="imagenes">
                             <img src="./IMAGENES/baseball_campeones.jpg" alt="Isotopes de Springfield" width="600" height="600">
                             <img src="./IMAGENES/isotopes.webp" alt="Logo de los Isotopes de Springfield" width="300" height="300">
@@ -182,32 +184,53 @@
                     Podemos dividirla de modo general en cuatro zonas, como:
                 </p>
                 <br>
-                <ul>
-                    <li>
-                        <p>
-                            El centro de la ciudad, donde se encuentran la mayoría de los negocios y edificios gubernamentales.
-                        </p>
-                        <img src="./IMAGENES/plaza_central.jpg" alt="Centro de Springfield" width="300" height="300">
-                    </li>
-                    <li>
-                        <p>
-                            La zona residencial, donde viven la mayoría de los habitantes de Springfield.
-                        </p>
-                        <img src="./IMAGENES/Zonaresidencial.png" alt="Zona residencial de Springfield" width="300" height="300">
-                    </li>
-                    <li>
-                        <p>
-                            El barrio industrial, donde se encuentran las fábricas y plantas de producción.
-                        </p>
-                        <img src="./IMAGENES/ZonaIndustrial.jpg" alt="Zona industrial de Springfield" width="300" height="300">
-                    </li>
-                    <li>
-                        <p>
-                            La zona rural, donde se encuentran los campos y granjas que abastecen a la ciudad.
-                        </p>
-                        <img src="./IMAGENES/campo.webp" alt="Zona rural de Springfield" width="300" height="300">
-                    </li>
-                </ul>
+                  <div class="container">
+  <div id="carouselExampleCaptions" class="carousel slide">
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./IMAGENES/plaza_central.jpg"width="800" height="300" class="d-block w-500" alt="Centro de Springfield">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Plaza Central</h5>
+          <p>El centro de la ciudad, donde se encuentran la mayoría de los negocios y edificios gubernamentales.</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="./IMAGENES/Zonaresidencial.png"width="800" height="300" class="d-block w-100" alt="Zona residencial de Springfield">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Zona Residencial</h5>
+          <p>La zona residencial, donde viven la mayoría de los habitantes de Springfield.</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="./IMAGENES/ZonaIndustrial.jpg"width="800" height="300" class="d-block w-100" alt="Zona industrial de Springfield">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Zona Industrial</h5>
+          <p>El barrio industrial, donde se encuentran las fábricas y plantas de producción.</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="./IMAGENES/campo.webp"width="800" height="300" class="d-block w-100" alt="Zona rural de Springfield">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Zona rural</h5>
+          <p>La zona rural, donde se encuentran los campos y granjas que abastecen a la ciudad.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</div>
                 <p>
                     ¿Quieres conocer más sobre alguno de los lugares mencionados? Te invitamos a visitar nuestra sección de
                     <a href="Lugares.html">Lugares</a> y descubrir la esencia de los sitios más emblemáticos de Springfield.
@@ -215,10 +238,16 @@
                 <br>
                 <h3>MAPA DE SPRINGFIELD</h3>
                     <img src="./IMAGENES/mapa_springfield.webp" alt="Mapa de Springfield" width="600" height="400">
-            </section>
+        
+        
+        
+                    
+                    </section>
+
         </main>
         <footer>
             <p><small>Información de Springfield</small></p>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
