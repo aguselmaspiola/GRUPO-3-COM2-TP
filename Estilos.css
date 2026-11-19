@@ -287,3 +287,30 @@ nav a.actual img {
 nav a.actual {
   color: #ffffff;
 }
+#btn-arriba {
+  position: fixed;      
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  background-color: #FED41D;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;        
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+}
+
+#btn-arriba.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#btn-arriba:hover {
+  transform: scale(1.15);
+}

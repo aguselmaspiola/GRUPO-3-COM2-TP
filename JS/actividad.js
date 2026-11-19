@@ -122,3 +122,17 @@ if (boton){
     volver_a_resultado.addEventListener("click", post_envio_questionario)
     revizar_respuestas.forEach (boton => {boton.addEventListener("click", comenzar)})
 }
+const btnArriba = document.getElementById('btn-arriba');
+
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    btnArriba.classList.add('visible');
+  } else {
+    btnArriba.classList.remove('visible');
+  }
+});
+
+btnArriba.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
