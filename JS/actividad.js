@@ -140,3 +140,34 @@ if (boton){
     });
 }
 
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxTexto = document.getElementById('lightbox-texto');
+const btnCerrar = document.getElementById('lightbox-cerrar');
+
+// Abrir: cada imagen de los lugares
+document.querySelectorAll('main section img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxTexto.textContent = img.alt;   // muestra el alt como pie de foto
+    lightbox.hidden = false;
+  });
+});
+
+function cerrar() {
+  lightbox.hidden = true;
+}
+
+// Cerrar con el botón
+btnCerrar.addEventListener('click', cerrar);
+
+// Cerrar haciendo clic en el fondo oscuro (no en la imagen)
+lightbox.addEventListener('click', (evento) => {
+  if (evento.target === lightbox) cerrar();
+});
+
+// Cerrar con la tecla Escape
+document.addEventListener('keydown', (evento) => {
+  if (evento.key === 'Escape') cerrar();
+});
