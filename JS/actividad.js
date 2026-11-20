@@ -108,7 +108,7 @@ function chequear_sorteo(event){
 
 function mostrar_preguntas_correctas(){
     const display_preguntas_correctas = document.getElementById("display_preguntas_correctas");
-    display_preguntas_correctas.textContent = `Obtuviste ${respuestas_correctas} de 10 respuestas correctas`
+    display_preguntas_correctas.textContent = `Respondiste ${respuestas_correctas} de 10 preguntas correctamente`
 
     preguntas.forEach((pregunta, nro) => {
     if(pregunta.value === "bien"){
@@ -230,23 +230,6 @@ if (boton){
     restaurar_estado();
 }
 
-const lightbox = document.getElementById('lightbox');
-
-if (lightbox) {
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxTexto = document.getElementById('lightbox-texto');
-  const btnCerrar = document.getElementById('lightbox-cerrar');
-
-  document.querySelectorAll('main section img').forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightboxTexto.textContent = img.alt;
-      lightbox.hidden = false;
-    });
-  });
-};
-
 const header = document.getElementById('header');
 
 if (header) {
@@ -276,14 +259,6 @@ document.querySelectorAll('img:not(#imagenGrande):not(.no-popup)').forEach(img =
       modal.show();
     });
   }
-});
-
-function cerrar() {
-    lightbox.hidden = true;
-}
-
-lightbox.addEventListener('click', (evento) => {
-    if (evento.target === lightbox) cerrar();
 });
 
 // Cerrar con la tecla Escape

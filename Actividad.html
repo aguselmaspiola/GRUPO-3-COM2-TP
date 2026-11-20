@@ -13,7 +13,7 @@
     </head>
 
   <body class="noche">
-    <header class="nocturno">
+    <header class="nocturno" id="header">
         <h1>El gran desafio de Springfield</h1>
         <nav class="display_menu_links">
             <a href="index.html"><img src="./IMAGENES/maggie_iconoNoche.png" class="img_header">Inicio</a>
@@ -72,141 +72,183 @@
                 </div>
 
                 <form id="preguntas_cuestionario">
-
-                    <img class="numero" src="./IMAGENES/uno.png" alt="Pregunta 1">
-                    <label for="pregunta_1"><p class="pregunta-dios">"¿Cúal de las siguientes tradiciones NO es de Springfield?"</p></label>
+                    <div class="mandamiento">
+                        <img class="numero" src="./IMAGENES/uno.png" alt="Pregunta 1">
+                        <label for="pregunta_1"><p class="pregunta-dios">"¿Cúal de las siguientes tradiciones NO es de Springfield?"</p></label>
+                    </div>
                     <br>
-                    <select class="pregunta" id="pregunta_1" name="pregunta_1">
-                        <option value=""></option>
-                        <option value="mal">El Día de San Patricio</option>
-                        <option value="mal">El Día del Apaleamiento</option>
-                        <option value="bien">El Día Amarillo</option>
-                        <option value="mal">El Incendio de Neumáticos</option>
-                    </select>
-                    <span class="estado_respuesta"></span>
-                    <br><br>
-
-                    <img class="numero" src="./IMAGENES/dos.png" alt="Pregunta 2">
-                    <label for="pregunta_2"><p class="pregunta-dios">"¿Quién fue el fundador de Springfield?"</p></label>
+                    <div class="mandamiento">
+                        <span class="estado_respuesta"></span>
+                        <select class="pregunta" id="pregunta_1" name="pregunta_1">
+                            <option value=""></option>
+                            <option value="mal">El Día de San Patricio</option>
+                            <option value="mal">El Día del Apaleamiento</option>
+                            <option value="bien">El Día Amarillo</option>
+                            <option value="mal">El Incendio de Neumáticos</option>
+                        </select>
+                        <img class="numero" src="./IMAGENES/bart_mandamiento.png">
+                    </div>
+                    <br><hr><br>
+                    <div class="mandamiento">
+                        <img class="numero" src="./IMAGENES/dos.png" alt="Pregunta 2">
+                        <label for="pregunta_2"><p class="pregunta-dios">"¿Quién fue el fundador de Springfield?"</p></label>
+                    </div>
                     <br>
-                    <select class="pregunta" id="pregunta_2" name="pregunta_2">
-                        <option value=""></option>
-                        <option value="mal">Jeremi Springfield</option>
-                        <option value="bien">Jeremias Springfield</option>
-                        <option value="mal">Shelbyville Manhattan</option>
-                        <option value="mal">Quimby Springfield</option>
-                    </select>
-                    <span class="estado_respuesta"></span>
-                    <br><br>
-
-                    <img class="numero" src="./IMAGENES/tres.png" alt="Pregunta 3">
-                    <label for="pregunta_3"><p class="pregunta-dios">"¿Cuanto cuesta el paquete estándar de nuestro viaje
-                    a Springfield si son 3 personas adultas y un bebe?"</p></label>
+                    <div class="mandamiento">
+                        <span class="estado_respuesta"></span>
+                        <select class="pregunta" id="pregunta_2" name="pregunta_2">
+                            <option value=""></option>
+                            <option value="mal">Jeremi Springfield</option>
+                            <option value="bien">Jeremias Springfield</option>
+                            <option value="mal">Shelbyville Manhattan</option>
+                            <option value="mal">Quimby Springfield</option>
+                        </select>
+                        <img class="numero" src="./IMAGENES/bart_mandamiento.png">
+                    </div>
+                    <br><hr><br>
+                    <div class="mandamiento">
+                        <img class="numero" src="./IMAGENES/tres.png" alt="Pregunta 3">
+                        <label for="pregunta_3"><p class="pregunta-dios">"¿Cuanto cuesta el paquete estándar de nuestro viaje
+                            a Springfield si son 3 personas adultas y un bebe?"</p></label>
+                    </div>
                     <br>
-                    <select class="pregunta" id="pregunta_3" name="pregunta_3">
-                        <option value=""></option>
-                        <option value="bien">$2800</option>
-                        <option value="mal">$2400</option>
-                        <option value="mal">$3200</option>
-                    </select> 
-                    <span class="estado_respuesta"></span>
-                    <br><br>
-
-                    <img class="numero" src="./IMAGENES/cuatro.png" alt="Pregunta 4">
-                    <label for="pregunta_4"><p class="pregunta-dios">"¿Cúal de los siguientes nombres no se puede atribuir a un miembro
-                        de la familia Simpson?"</p></label>
+                    <div class="mandamiento">
+                        <span class="estado_respuesta"></span>
+                        <select class="pregunta" id="pregunta_3" name="pregunta_3">
+                            <option value=""></option>
+                            <option value="bien">$2800</option>
+                            <option value="mal">$2400</option>
+                            <option value="mal">$3200</option>
+                        </select> 
+                        <img class="numero" src="./IMAGENES/bart_mandamiento.png">
+                    </div>
+                    <br><hr><br>
+                    <div class="mandamiento">
+                        <img class="numero" src="./IMAGENES/cuatro.png" alt="Pregunta 4">
+                        <label for="pregunta_4"><p class="pregunta-dios">"¿Cúal de los siguientes nombres no se puede atribuir a un miembro
+                            de la familia Simpson?"</p></label>
+                    </div>
                     <br>
-                    <select class="pregunta" id="pregunta_4" name="pregunta_4">
-                        <option value=""></option>
-                        <option value="mal">Homero</option>
-                        <option value="mal">Hugo</option>
-                        <option value="mal">Maggie</option>
-                        <option value="bien">Susie</option>
-                        <option value="mal">Bartolomeo</option>
-                        <option value="mal">Abe</option>
-                    </select>
-                    <span class="estado_respuesta"></span>
-                    <br><br>
-
-                    <img class="numero" src="./IMAGENES/cinco.png" alt="Pregunta 5">
-                    <label for="pregunta_5"><p class="pregunta-dios">"¿En que día fundamos nuestra agencia de viajes?"</p></label>
+                    <div class="mandamiento">
+                        <span class="estado_respuesta"></span>
+                        <select class="pregunta" id="pregunta_4" name="pregunta_4">
+                            <option value=""></option>
+                            <option value="mal">Homero</option>
+                            <option value="mal">Hugo</option>
+                            <option value="mal">Maggie</option>
+                            <option value="bien">Susie</option>
+                            <option value="mal">Bartolomeo</option>
+                            <option value="mal">Abe</option>
+                        </select>
+                        <img class="numero" src="./IMAGENES/bart_mandamiento.png">
+                    </div>
+                    <br><hr><br>
+                    <div class="mandamiento">
+                        <img class="numero" src="./IMAGENES/cinco.png" alt="Pregunta 5">
+                        <label for="pregunta_5"><p class="pregunta-dios">"¿En que día fundamos nuestra agencia de viajes?"</p></label>
+                    </div>
                     <br>
-                    <select class="pregunta" id="pregunta_5" name="pregunta_5">
-                        <option value=""></option>
-                        <option value="bien">12/09/2007</option>
-                        <option value="mal">13/03/2018</option>
-                        <option value="mal">24/12/2020</option>
-                        <option value="mal">20/09/2026</option>
-                    </select>
-                    <span class="estado_respuesta"></span>
-                    <br><br>
-
-                    <img class="numero" src="./IMAGENES/seis.png" alt="Pregunta 6">
-                    <label for="pregunta_6"><p class="pregunta-dios">"¿Cómo se llama el equipo local de baseball de Springfield?"</p></label>
+                    <div class="mandamiento">
+                        <span class="estado_respuesta"></span>
+                        <select class="pregunta" id="pregunta_5" name="pregunta_5">
+                            <option value=""></option>
+                            <option value="bien">12/09/2007</option>
+                            <option value="mal">13/03/2018</option>
+                            <option value="mal">24/12/2020</option>
+                            <option value="mal">20/09/2026</option>
+                        </select>
+                        <img class="numero" src="./IMAGENES/bart_mandamiento.png">
+                    </div>
+                    <br><hr><br>
+                    <div class="mandamiento">
+                        <img class="numero" src="./IMAGENES/seis.png" alt="Pregunta 6">
+                        <label for="pregunta_6"><p class="pregunta-dios">"¿Cómo se llama el equipo local de baseball de Springfield?"</p></label>
+                    </div>
                     <br>
-                    <select class="pregunta" id="pregunta_6" name="pregunta_6">
-                        <option value=""></option>
-                        <option value="mal">Atomicos de Springfield</option>
-                        <option value="bien">Isotopos de Springfield</option>
-                        <option value="mal">Zarigüeyas de Springfield</option>
-                        <option value="mal">Serpientes de Springfield</option>
-                    </select>
-                    <span class="estado_respuesta"></span>
-                    <br><br>
-
-                    <img class="numero" src="./IMAGENES/siete.png" alt="Pregunta 7">
-                    <label for="pregunta_7"><p class="pregunta-dios">"¿Cuál es el nombre del presentador del canal 6?"</p></label>
+                    <div class="mandamiento">
+                        <span class="estado_respuesta"></span>
+                        <select class="pregunta" id="pregunta_6" name="pregunta_6">
+                            <option value=""></option>
+                            <option value="mal">Atomicos de Springfield</option>
+                            <option value="bien">Isotopos de Springfield</option>
+                            <option value="mal">Zarigüeyas de Springfield</option>
+                            <option value="mal">Serpientes de Springfield</option>
+                        </select>
+                        <img class="numero" src="./IMAGENES/bart_mandamiento.png">
+                    </div>
+                    <br><hr><br>
+                    <div class="mandamiento">
+                        <img class="numero" src="./IMAGENES/siete.png" alt="Pregunta 7">
+                        <label for="pregunta_7"><p class="pregunta-dios">"¿Cuál es el nombre del presentador del canal 6?"</p></label>
+                    </div>
                     <br>
-                    <select class="pregunta" id="pregunta_7" name="pregunta_7">
-                        <option value=""></option>
-                        <option value="mal">Krusty</option>
-                        <option value="mal">Rainer</option>
-                        <option value="mal">Tineli</option>
-                        <option value="bien">Kent</option>
-                    </select>
-                    <span class="estado_respuesta"></span>
-                    <br><br>
-
-                    <img class="numero" src="./IMAGENES/ocho.png" alt="Pregunta 8">
-                    <label for="pregunta_8"><p class="pregunta-dios">"¿Cómo se llama el dueño y administrador del Kwik-E-Mart?"</p></label>
+                    <div class="mandamiento">
+                        <span class="estado_respuesta"></span>
+                        <select class="pregunta" id="pregunta_7" name="pregunta_7">
+                            <option value=""></option>
+                            <option value="mal">Krusty</option>
+                            <option value="mal">Rainer</option>
+                            <option value="mal">Tineli</option>
+                            <option value="bien">Kent</option>
+                        </select>
+                        <img class="numero" src="./IMAGENES/bart_mandamiento.png">
+                    </div>
+                    <br><hr><br>
+                    <div class="mandamiento">
+                        <img class="numero" src="./IMAGENES/ocho.png" alt="Pregunta 8">
+                        <label for="pregunta_8"><p class="pregunta-dios">"¿Cómo se llama el dueño y administrador del Kwik-E-Mart?"</p></label>
+                    </div>
                     <br>
-                    <select class="pregunta" id="pregunta_8" name="pregunta_8">
-                        <option value=""></option>
-                        <option value="mal"> Homero Simpson</option>
-                        <option value="mal"> Ned Flanders </option>
-                        <option value="bien"> Apu Nahasapeemapetilon </option>
-                    </select>
-                    <span class="estado_respuesta"></span>
-                    <br><br>
-
-                    <img class="numero" src="./IMAGENES/nueve.png" alt="Pregunta 9">
-                    <label for="pregunta_9"><p class="pregunta-dios">"¿Es Miguel Agustín Castillo Cespedes parte del equipo de desarrollo?"
-                    </p></label>
+                    <div class="mandamiento">
+                        <span class="estado_respuesta"></span>
+                        <select class="pregunta" id="pregunta_8" name="pregunta_8">
+                            <option value=""></option>
+                            <option value="mal"> Homero Simpson</option>
+                            <option value="mal"> Ned Flanders </option>
+                            <option value="bien"> Apu Nahasapeemapetilon </option>
+                        </select>
+                        <img class="numero" src="./IMAGENES/bart_mandamiento.png">
+                    </div>
+                    <br><hr><br>
+                    <div class="mandamiento">
+                        <img class="numero" src="./IMAGENES/nueve.png" alt="Pregunta 9">
+                        <label for="pregunta_9"><p class="pregunta-dios">"¿Es Miguel Agustín Castillo Cespedes parte del equipo de desarrollo?"
+                        </p></label>
+                    </div>
                     <br>
-                    <select class="pregunta" id="pregunta_9" name="pregunta_9">
-                        <option value=""></option>
-                        <option value="bien">Si</option>
-                        <option value="mal">No</option>
-                    </select>
-                    <span class="estado_respuesta"></span>
-                    <br><br>
-
-                    <img class="numero" src="./IMAGENES/diez.png" alt="Pregunta 10">
-                    <label for="pregunta_10"><p class="pregunta-dios">"¿Cuál es la direccion de nuestra agencia de viajes?"
-                    </p></label>
+                    <div class="mandamiento">
+                        <span class="estado_respuesta"></span>
+                        <select class="pregunta" id="pregunta_9" name="pregunta_9">
+                            <option value=""></option>
+                            <option value="bien">Si</option>
+                            <option value="mal">No</option>
+                        </select>
+                        <img class="numero" src="./IMAGENES/bart_mandamiento.png">
+                    </div>
+                    <br><hr><br>
+                    <div class="mandamiento">
+                        <img class="numero" src="./IMAGENES/diez.png" alt="Pregunta 10">
+                        <label for="pregunta_10"><p class="pregunta-dios">"¿Cuál es la direccion de nuestra agencia de viajes?"
+                        </p></label>
+                    </div>
                     <br>
-                    <select class="pregunta" id="pregunta_10" name="pregunta_10">
-                        <option value=""></option>
-                        <option value="bien">Calle UNAHUR 6767</option>
-                        <option value="mal">Calle Falsa 123</option>
-                        <option value="mal">Avenida Siempre Viva 2370</option>
-                    </select>
-                    <span class="estado_respuesta"></span>
-                    <br><br>
-
-                    <button id="confirmar_formulario" type="submit">Confirmar formulario</button>
-                    <p id="display_preguntas_correctas"></p>
-                    <button id="premio" type="button" style="display: none;">Volver</button>
+                    <div class="mandamiento">
+                        <span class="estado_respuesta"></span>
+                        <select class="pregunta" id="pregunta_10" name="pregunta_10">
+                            <option value=""></option>
+                            <option value="bien">Calle UNAHUR 6767</option>
+                            <option value="mal">Calle Falsa 123</option>
+                            <option value="mal">Avenida Siempre Viva 2370</option>
+                        </select>
+                        <img class="numero" src="./IMAGENES/bart_mandamiento.png">
+                    </div>
+                    <br><hr><br>
+                    <div class="mandamiento2">
+                        <button id="confirmar_formulario" type="submit">Confirmar formulario</button>
+                        <br>
+                        <p id="display_preguntas_correctas"></p>
+                        <button id="premio" type="button" style="display: none;">Volver</button>
+                    </div>
                 </form>
 
 
