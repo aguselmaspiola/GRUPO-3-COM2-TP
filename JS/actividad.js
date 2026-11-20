@@ -7,8 +7,8 @@ const perdedor = document.getElementById("perdedor");
 const revisar_respuestas = document.querySelectorAll(".revisar");
 const volver_a_resultado = document.getElementById("premio");
 const preguntas_cuestionario = document.getElementById("preguntas_cuestionario");
-const preguntas = document.querySelectorAll(".pregunta")
-const texto_error = document.querySelectorAll(".texto_error")
+const preguntas = document.querySelectorAll(".pregunta");
+const estado_respuesta = document.querySelectorAll(".estado_respuesta");
 let respuestas_correctas = 0;
 
 
@@ -86,6 +86,17 @@ function chequear_sorteo(event){
 function mostrar_preguntas_correctas(){
     const display_preguntas_correctas = document.getElementById("display_preguntas_correctas");
     display_preguntas_correctas.textContent = `Tuviste ${respuestas_correctas}/10`
+
+    preguntas.forEach((pregunta, nro) => {
+    if(pregunta.value === "bien"){
+        estado_respuesta[nro].textContent= "Correcta";
+        estado_respuesta[nro].classList.add("respuesta_correcta");
+    }
+    else{
+        estado_respuesta[nro].textContent= "Incorrecta";
+        estado_respuesta[nro].classList.add("respuesta_incorrecta");
+    }
+    });
 }
 
 function post_envio_cuestionario(){
@@ -123,46 +134,17 @@ function verificar_respuestas_validas(){
     let respuestas_validas = 0
     preguntas.forEach ((pregunta, nro) =>{
         if (es_opcion_valida(pregunta.value)){
-            texto_error[nro].style.display = "none"
+            estado_respuesta[nro].textContent = ""
             respuestas_validas++;
         }
         else{
-            texto_error[nro].style.display = "block"
+            estado_respuesta[nro].textContent = "Marcar respuesta valida"
         }
     });
     return respuestas_validas === 10
 }
 
 // Para acceder rapidamente a la seccion perdedor y ganador
-
-const acceso_ganador = document.getElementById("acceso-ganador");
-const acceso_perdedor = document.getElementById("acceso-perdedor");
-
-function mostrar_resultado_prueba(resultado) {
-    introduccion.style.display = "none";
-    cuestionario.style.display = "none";
-
-    ganador.style.display = "none";
-    perdedor.style.display = "none";
-
-    if (resultado === "ganador") {
-        ganador.style.display = "block";
-        lanzarConfetis();
-    }
-    else if (resultado === "perdedor") {
-        perdedor.style.display = "block";
-    }
-}
-
-if (acceso_ganador && acceso_perdedor) {
-    acceso_ganador.addEventListener("click", () => {
-        mostrar_resultado_prueba("ganador");
-    });
-
-    acceso_perdedor.addEventListener("click", () => {
-        mostrar_resultado_prueba("perdedor");
-    });
-}
 
 function mostrar_mensaje_dios(gano){
     const espera = document.getElementById("espera");
@@ -214,7 +196,7 @@ if (boton){
     preguntas_cuestionario.addEventListener("submit", chequear_sorteo)
     volver_a_resultado.addEventListener("click", post_envio_cuestionario)
     revisar_respuestas.forEach (boton => {boton.addEventListener("click", comenzar)})
-     preguntas.forEach(pregunta => {
+    preguntas.forEach(pregunta => {
         pregunta.addEventListener("change", actualizar_progreso)
     });
 }
@@ -235,6 +217,7 @@ if (lightbox) {
     });
   });
 };
+
 const header = document.getElementById('header');
 
 if (header) {
@@ -250,31 +233,29 @@ if (header) {
     ultimoScroll = y;
   });
 }
-const modalEl = document.getElementById('modalImagen');
-  const modal = new bootstrap.Modal(modalEl);
-  const grande = document.getElementById('imagenGrande');
 
-  document.querySelectorAll('img:not(#imagenGrande):not(.no-popup)').forEach(img => {
+const modalEl = document.getElementById('modalImagen');
+const modal = new bootstrap.Modal(modalEl);
+const grande = document.getElementById('imagenGrande');
+
+document.querySelectorAll('img:not(#imagenGrande):not(.no-popup)').forEach(img => {
+  if (!img.classList.contains("img_header")) {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', () => {
       grande.src = img.src;
       grande.alt = img.alt;
       modal.show();
     });
-  });
-
-
-
-
-  function cerrar() {
-    lightbox.hidden = true;
   }
+});
 
-  btnCerrar.addEventListener('click', cerrar);
+function cerrar() {
+    lightbox.hidden = true;
+}
 
-  lightbox.addEventListener('click', (evento) => {
+lightbox.addEventListener('click', (evento) => {
     if (evento.target === lightbox) cerrar();
-  });
+});
 
 // Cerrar con la tecla Escape
 document.addEventListener('keydown', (evento) => {

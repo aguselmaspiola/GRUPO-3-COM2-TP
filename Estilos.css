@@ -419,7 +419,6 @@ main section img {
     border: none;
     width: 8rem;
     height: 9rem;
-    max-width: 20%;
 }
 
 .pregunta{
@@ -473,4 +472,12 @@ main section img {
     max-height: 30vh;
     max-width: 20%;
     border: none;
+}
+
+.respuesta_correcta{
+    color: greenyellow;
+}
+
+.respuesta_incorrecta{
+    color: red;
 }

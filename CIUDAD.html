@@ -25,13 +25,13 @@
         <header id="header">
             <h1>Bienvenido a Springfield la ciudad de los Simpsons</h1>
             <nav class="display_menu_links">
-                <a href="index.html"><img src="./IMAGENES/maggie_icono.png">Inicio</a>
-                <a href="Lugares.html"><img src="./IMAGENES/homero_icono.png">Lugares</a>
-                <a href="Contacto.html"><img src="./IMAGENES/marge_icono.png">Contacto</a>
-                <a href="Actividad.html"><img src="./IMAGENES/bart_icono.png">Sorteo</a>
-                <div>
-                    <img src="./IMAGENES/lisa_icono.png"><p>Estas aca</p>
+                <a href="index.html"><img src="./IMAGENES/maggie_icono.png" class="img_header">Inicio</a>
+                <a href="Lugares.html"><img src="./IMAGENES/homero_icono.png" class="img_header">Lugares</a>
+                <div style="align-items: center;">
+                    <img src="./IMAGENES/lisa_icono.png" class="img_header"><p>Estas aca</p>
                 </div>
+                <a href="Contacto.html"><img src="./IMAGENES/marge_icono.png" class="img_header">Contacto</a>
+                <a href="Actividad.html"><img src="./IMAGENES/bart_icono.png" class="img_header">Sorteo</a>
             </nav>
         </header>
 
@@ -70,8 +70,10 @@
                     Su legado perdura en la ciudad, homenajeando su memoria con una estatua en el centro de la ciudad y celebrando el
                     <b>Día de de los Fundadores</b> cada año.
                 </p>
-
-                <img src="./IMAGENES/Estatua.jpg" alt="Estatua de Jeremias Springfield" width="600" height="600">
+                <div class="imagenes">
+                    <img src="./IMAGENES/Estatua.jpg" alt="Estatua de Jeremias Springfield" width="600" height="600">
+                </div>
+            
             </section>
 
             <hr>
@@ -85,7 +87,10 @@
                     quería que los hombres pudieran casarse con sus primas, mientras que Jeremias Springfield quería mantener una vida
                     casta y un gobierno justo.
                 </p>
-                <img src="./IMAGENES/rivalidad.png" alt="Rivalidad con Shelbyville" width="367" height="367">
+                <div class="imagenes">
+                    <img src="./IMAGENES/rivalidad.png" alt="Rivalidad con Shelbyville" width="367" height="367">
+                </div>
+            
             </section>
 
             <hr>
@@ -247,14 +252,17 @@
                 </p>
                 <br>
                 <h3>MAPA DE SPRINGFIELD</h3>
-                <img src="./IMAGENES/mapa_springfield.webp" alt="Mapa de Springfield" width="600" height="400">
+                <div class="imagenes">
+                    <img src="./IMAGENES/mapa_springfield.webp" alt="Mapa de Springfield" width="600" height="400">
+                </div>
             </section>
 
         </main>
         <footer>
-            <p><small>Información de Springfield</small></p>
+            <p><small><i>Derechos reservados a los Simpsons</i></small></p>
+            <p><small><i>Desarollado por el equipo 3 de lenguajes informaticos I, a cargo de Gonzalo (el pela)</i></small></p>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./JS/actividad.js" defer></script>
+        <script src="./JS/actividad.js" defer></script>
     </body>
 </html>
