@@ -22,7 +22,7 @@
     </div>
   </div>
 </div>
-        <header>
+        <header id="header">
             <h1>TourField</h1>
                 <nav class="display_menu_links">
                 <a href="index.html"><img src="./IMAGENES/maggie_icono.png">Inicio</a>
@@ -255,20 +255,7 @@
 </div>
 
 <script src="lightbox.js"></script>
-<script>
-  const modalEl = document.getElementById('modalImagen');
-  const modal = new bootstrap.Modal(modalEl);
-  const grande = document.getElementById('imagenGrande');
-
-  document.querySelectorAll('img:not(#imagenGrande):not(.no-popup)').forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', () => {
-      grande.src = img.src;
-      grande.alt = img.alt;
-      modal.show();
-    });
-  });
-</script>
+<script src="./JS/actividad.js" defer></script>
 </body>
     </body>
 
