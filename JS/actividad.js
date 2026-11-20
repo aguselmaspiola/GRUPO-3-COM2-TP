@@ -234,7 +234,7 @@ if (lightbox) {
       lightbox.hidden = false;
     });
   });
-});
+};
 const header = document.getElementById('header');
 
 if (header) {
@@ -280,19 +280,3 @@ const modalEl = document.getElementById('modalImagen');
 document.addEventListener('keydown', (evento) => {
   if (evento.key === 'Escape') cerrar();
 });
-
-const header = document.getElementById('header');
-
-if (header) {
-  let ultimoScroll = window.scrollY;
-
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y > ultimoScroll && y > 10) {
-      header.style.transform = 'translateY(-100%)';   // bajando: se esconde
-    } else {
-      header.style.transform = 'translateY(0)';       // subiendo: aparece
-    }
-    ultimoScroll = y;
-  });
-}
