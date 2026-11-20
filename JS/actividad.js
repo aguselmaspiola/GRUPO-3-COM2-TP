@@ -11,6 +11,21 @@ const preguntas = document.querySelectorAll(".pregunta");
 const estado_respuesta = document.querySelectorAll(".estado_respuesta");
 let respuestas_correctas = 0;
 
+const CLAVE_TRIVIA = "trivia_simpsons";
+
+function leer_estado(){
+    try {
+        return JSON.parse(sessionStorage.getItem(CLAVE_TRIVIA)) || {};
+    } catch {
+        return {};
+    }
+}
+
+function guardar_estado(cambios){
+    const estado = { ...leer_estado(), ...cambios };
+    sessionStorage.setItem(CLAVE_TRIVIA, JSON.stringify(estado));
+}
+
 
 function fingir_envio(event) {
     const texto_encuesta = document.getElementById("texto_envio_encuesta");
@@ -39,15 +54,19 @@ function fingir_envio(event) {
         error_email.style.display = "block"
     }
 }
+
 function es_nombre_valido(nombre){
     return nombre !== ""
 }
+
 function es_opcion_valida(tipo_opcion){
     return tipo_opcion !== ""
 }
+
 function es_email_valido(email){
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
+
 const barra_progreso = document.getElementById("barra_progreso");
 const contenedor_progreso = document.getElementById("contenedor_progreso");
 
@@ -63,12 +82,15 @@ function actualizar_progreso() {
     barra_progreso.textContent = porcentaje + "%";
     contenedor_progreso.setAttribute("aria-valuenow", porcentaje);
 }
+
 function comenzar() {
     introduccion.style.display = "none"
     perdedor.style.display = "none"
     ganador.style.display = "none"
     cuestionario.style.display = "block"
+    guardar_estado({ iniciado: true })
 }
+
 function chequear_sorteo(event){
     const confirmar_formulario = document.getElementById("confirmar_formulario");
     event.preventDefault();
@@ -76,6 +98,7 @@ function chequear_sorteo(event){
     if(verificar_respuestas_validas()){
         sumar_puntos()
         bloquear_opciones()
+        guardar_estado({ enviado: true })
         confirmar_formulario.disabled = true
         confirmar_formulario.textContent = "Enviado, gracias por participar :)"
         post_envio_cuestionario()
@@ -85,7 +108,7 @@ function chequear_sorteo(event){
 
 function mostrar_preguntas_correctas(){
     const display_preguntas_correctas = document.getElementById("display_preguntas_correctas");
-    display_preguntas_correctas.textContent = `Tuviste ${respuestas_correctas}/10`
+    display_preguntas_correctas.textContent = `Obtuviste ${respuestas_correctas} de 10 respuestas correctas`
 
     preguntas.forEach((pregunta, nro) => {
     if(pregunta.value === "bien"){
@@ -103,6 +126,8 @@ function post_envio_cuestionario(){
     const gano = respuestas_correctas >= 9;
 
     mostrar_mensaje_dios(gano)
+
+    introduccion.style.display = "none"
 
     if (gano){
         cuestionario.style.display = "none"
@@ -138,7 +163,7 @@ function verificar_respuestas_validas(){
             respuestas_validas++;
         }
         else{
-            estado_respuesta[nro].textContent = "Marcar respuesta valida"
+            estado_respuesta[nro].textContent = "¡Responde la pregunta!"
         }
     });
     return respuestas_validas === 10
@@ -197,8 +222,12 @@ if (boton){
     volver_a_resultado.addEventListener("click", post_envio_cuestionario)
     revisar_respuestas.forEach (boton => {boton.addEventListener("click", comenzar)})
     preguntas.forEach(pregunta => {
-        pregunta.addEventListener("change", actualizar_progreso)
+    pregunta.addEventListener("change", () => {
+        actualizar_progreso();
+        guardar_estado({ respuestas: Array.from(preguntas).map(p => p.value) });
     });
+    });
+    restaurar_estado();
 }
 
 const lightbox = document.getElementById('lightbox');
@@ -261,3 +290,28 @@ lightbox.addEventListener('click', (evento) => {
 document.addEventListener('keydown', (evento) => {
   if (evento.key === 'Escape') cerrar();
 });
+
+function restaurar_estado(){
+    const estado = leer_estado();
+    if (!estado.iniciado) return;
+
+    if (estado.respuestas) {
+        preguntas.forEach((pregunta, i) => {
+            pregunta.value = estado.respuestas[i] ?? "";
+        });
+    }
+    actualizar_progreso();
+
+    if (estado.enviado) {
+        const confirmar_formulario = document.getElementById("confirmar_formulario");
+        respuestas_correctas = 0;
+        sumar_puntos();
+        bloquear_opciones();
+        confirmar_formulario.disabled = true;
+        confirmar_formulario.textContent = "Enviado, gracias por participar :)";
+        mostrar_preguntas_correctas();
+        post_envio_cuestionario();
+    } else {
+        comenzar();
+    }
+}
