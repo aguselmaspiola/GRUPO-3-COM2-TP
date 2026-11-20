@@ -234,6 +234,37 @@ if (lightbox) {
       lightbox.hidden = false;
     });
   });
+});
+const header = document.getElementById('header');
+
+if (header) {
+  let ultimoScroll = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > ultimoScroll && y > 10) {
+      header.style.transform = 'translateY(-100%)';   // bajando: se esconde
+    } else {
+      header.style.transform = 'translateY(0)';       // subiendo: aparece
+    }
+    ultimoScroll = y;
+  });
+}
+const modalEl = document.getElementById('modalImagen');
+  const modal = new bootstrap.Modal(modalEl);
+  const grande = document.getElementById('imagenGrande');
+
+  document.querySelectorAll('img:not(#imagenGrande):not(.no-popup)').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      grande.src = img.src;
+      grande.alt = img.alt;
+      modal.show();
+    });
+  });
+
+
+
 
   function cerrar() {
     lightbox.hidden = true;
@@ -245,7 +276,7 @@ if (lightbox) {
     if (evento.target === lightbox) cerrar();
   });
 
-  document.addEventListener('keydown', (evento) => {
-    if (evento.key === 'Escape') cerrar();
-  });
-}
+// Cerrar con la tecla Escape
+document.addEventListener('keydown', (evento) => {
+  if (evento.key === 'Escape') cerrar();
+});
