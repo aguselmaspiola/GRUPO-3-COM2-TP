@@ -82,14 +82,21 @@ function chequear_sorteo(event){
         mostrar_preguntas_correctas()
     }
 }
+
 function mostrar_preguntas_correctas(){
     const display_preguntas_correctas = document.getElementById("display_preguntas_correctas");
     display_preguntas_correctas.textContent = `Tuviste ${respuestas_correctas}/10`
 }
+
 function post_envio_cuestionario(){
-    if (respuestas_correctas >= 9){
+    const gano = respuestas_correctas >= 9;
+
+    mostrar_mensaje_dios(gano)
+
+    if (gano){
         cuestionario.style.display = "none"
         ganador.style.display = "block"
+        lanzarConfetis()
     }
     else{
         cuestionario.style.display = "none"
@@ -97,11 +104,13 @@ function post_envio_cuestionario(){
     }
     volver_a_resultado.style.display = "block"
 }
+
 function bloquear_opciones(){
     preguntas.forEach (pregunta => {
         pregunta.disabled = true
     });
 }
+
 function sumar_puntos(){
     preguntas.forEach(pregunta => {
         if(pregunta.value === "bien"){
@@ -109,6 +118,7 @@ function sumar_puntos(){
         }
     });
 }
+
 function verificar_respuestas_validas(){
     let respuestas_validas = 0
     preguntas.forEach ((pregunta, nro) =>{
@@ -137,6 +147,7 @@ function mostrar_resultado_prueba(resultado) {
 
     if (resultado === "ganador") {
         ganador.style.display = "block";
+        lanzarConfetis();
     }
     else if (resultado === "perdedor") {
         perdedor.style.display = "block";
@@ -151,6 +162,44 @@ if (acceso_ganador && acceso_perdedor) {
     acceso_perdedor.addEventListener("click", () => {
         mostrar_resultado_prueba("perdedor");
     });
+}
+
+function mostrar_mensaje_dios(gano){
+    const espera = document.getElementById("espera");
+    const victoria = document.getElementById("victoria");
+    const derrota = document.getElementById("derrota");
+
+    if (!espera || !victoria || !derrota) return;
+
+    espera.style.display = "none";
+    victoria.style.display = gano ? "block" : "none";
+    derrota.style.display = gano ? "none" : "block";
+}
+
+function lanzarConfetis() {
+  const duracion = 3000; // 3 segundos
+  const fin = Date.now() + duracion;
+  const colores = ['#FED90F', '#3bdb48', '#FF6B6B', '#FFFFFF'];
+
+  (function frame() {
+    // un cañón desde cada lado
+    confetti({
+      particleCount: 4,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors: colores
+    });
+    confetti({
+      particleCount: 4,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors: colores
+    });
+
+    if (Date.now() < fin) requestAnimationFrame(frame);
+  })();
 }
 
 /*Los if son para que en caso de que el html no sea el que usa "comenzar trivia" 
@@ -171,17 +220,19 @@ if (boton){
 }
 
 const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const lightboxTexto = document.getElementById('lightbox-texto');
-const btnCerrar = document.getElementById('lightbox-cerrar');
 
-// Abrir: cada imagen de los lugares
-document.querySelectorAll('main section img').forEach(img => {
-  img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightboxTexto.textContent = img.alt;   // muestra el alt como pie de foto
-    lightbox.hidden = false;
+if (lightbox) {
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxTexto = document.getElementById('lightbox-texto');
+  const btnCerrar = document.getElementById('lightbox-cerrar');
+
+  document.querySelectorAll('main section img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxTexto.textContent = img.alt;
+      lightbox.hidden = false;
+    });
   });
 });
 const header = document.getElementById('header');
@@ -215,17 +266,15 @@ const modalEl = document.getElementById('modalImagen');
 
 
 
-function cerrar() {
-  lightbox.hidden = true;
-}
+  function cerrar() {
+    lightbox.hidden = true;
+  }
 
-// Cerrar con el botón
-btnCerrar.addEventListener('click', cerrar);
+  btnCerrar.addEventListener('click', cerrar);
 
-// Cerrar haciendo clic en el fondo oscuro (no en la imagen)
-lightbox.addEventListener('click', (evento) => {
-  if (evento.target === lightbox) cerrar();
-});
+  lightbox.addEventListener('click', (evento) => {
+    if (evento.target === lightbox) cerrar();
+  });
 
 // Cerrar con la tecla Escape
 document.addEventListener('keydown', (evento) => {
