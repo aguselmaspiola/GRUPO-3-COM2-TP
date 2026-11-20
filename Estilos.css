@@ -39,6 +39,7 @@ header{
     position: sticky; top: 0%;
     z-index: 100;
 }
+
 header h1 {
   font-size: 3rem;
   margin:   10px 0;
@@ -234,8 +235,9 @@ div{
 
 .texto_error{
     display: none;
-    color: red;
-    font-size: 1.5rem;
+    color: #e96315;
+    font-size: 2rem;
+    animation: texto-mov 1s ease-in-out infinite;
 }
 
 .display_menu_links{
@@ -264,22 +266,13 @@ div{
     --bs-accordion-active-bg: var(--color_fondo_sec);
 }
 
-nav img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 3px solid #000;
-  background-color: #ffffff;
-  vertical-align: middle;
-  margin-right: 8px;
-}
-
 .actual {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 20px;
   padding: 5px 15px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
+
 nav a.actual img {
   border-color: #ffffff;
   box-shadow: 0 0 10px #ffffff;
@@ -409,6 +402,37 @@ main section img {
     animation: texto-mov 1.5s ease-in-out infinite;
 }
 
+.pregunta-dios{
+    color: #e6b327;
+    font-size: 2rem;
+    background-color: #5f527a;
+    border: 2px solid #271f36;
+    border-radius: 10px;
+    animation: texto-mov 2.5s ease-in-out infinite;
+}
+
+.numero{
+    border: none;
+    width: 8rem;
+    height: 9rem;
+    max-width: 20%;
+}
+
+.pregunta{
+    border: 1px solid #1f2379;
+    background-color: #682fb3;
+    color: #eeea10;
+}
+
+#confirmar_formulario{
+    color: #e96315;
+    border: 1px solid #eeea10;
+    background-color: #cfce76;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px #eeea10);
+}
+
+
 @keyframes texto-mov {
   0%, 100% {
     transform: translateY(0);
@@ -416,4 +440,33 @@ main section img {
   50% {
     transform: translateY(-10px);
   }
+}
+
+#ganador{
+    width: 75%;
+    margin: 0 auto;
+}
+
+.resultados-contenido{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.resultados-texto{
+    flex: 1;
+    text-align: center;
+    border: 1px solid #271f36;
+    background-color: #682fb3;
+    --color_texto: #e6ca2e;
+    --color_detalles: #e6ca2e;
+    --color_detalles_2: #4c50ac;
+}
+
+.resultados-contenido img{
+    height: auto;
+    max-height: 30vh;
+    max-width: 20%;
+    border: none;
 }
