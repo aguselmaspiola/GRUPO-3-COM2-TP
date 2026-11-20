@@ -1,12 +1,12 @@
 const boton = document.getElementById("comenzar-trivia");
 const encuesta = document.getElementById("encuesta_satisfaccion");
 const introduccion = document.getElementById("introduccion");
-const questionario = document.getElementById("questionario");
+const cuestionario = document.getElementById("cuestionario");
 const ganador = document.getElementById("ganador");
 const perdedor = document.getElementById("perdedor");
-const revizar_respuestas = document.querySelectorAll(".revisar");
+const revisar_respuestas = document.querySelectorAll(".revisar");
 const volver_a_resultado = document.getElementById("premio");
-const preguntas_questionario = document.getElementById("preguntas_questionario");
+const preguntas_cuestionario = document.getElementById("preguntas_cuestionario");
 const preguntas = document.querySelectorAll(".pregunta")
 const texto_error = document.querySelectorAll(".texto_error")
 let respuestas_correctas = 0;
@@ -67,7 +67,7 @@ function comenzar() {
     introduccion.style.display = "none"
     perdedor.style.display = "none"
     ganador.style.display = "none"
-    questionario.style.display = "block"
+    cuestionario.style.display = "block"
 }
 function chequear_sorteo(event){
     const confirmar_formulario = document.getElementById("confirmar_formulario");
@@ -78,7 +78,7 @@ function chequear_sorteo(event){
         bloquear_opciones()
         confirmar_formulario.disabled = true
         confirmar_formulario.textContent = "Enviado, gracias por participar :)"
-        post_envio_questionario()
+        post_envio_cuestionario()
         mostrar_preguntas_correctas()
     }
 }
@@ -86,13 +86,13 @@ function mostrar_preguntas_correctas(){
     const display_preguntas_correctas = document.getElementById("display_preguntas_correctas");
     display_preguntas_correctas.textContent = `Tuviste ${respuestas_correctas}/10`
 }
-function post_envio_questionario(){
-    if (respuestas_correctas>=7){
-        questionario.style.display = "none"
+function post_envio_cuestionario(){
+    if (respuestas_correctas >= 9){
+        cuestionario.style.display = "none"
         ganador.style.display = "block"
     }
     else{
-        questionario.style.display = "none"
+        cuestionario.style.display = "none"
         perdedor.style.display = "block"
     }
     volver_a_resultado.style.display = "block"
@@ -123,6 +123,36 @@ function verificar_respuestas_validas(){
     return respuestas_validas === 10
 }
 
+// Para acceder rapidamente a la seccion perdedor y ganador
+
+const acceso_ganador = document.getElementById("acceso-ganador");
+const acceso_perdedor = document.getElementById("acceso-perdedor");
+
+function mostrar_resultado_prueba(resultado) {
+    introduccion.style.display = "none";
+    cuestionario.style.display = "none";
+
+    ganador.style.display = "none";
+    perdedor.style.display = "none";
+
+    if (resultado === "ganador") {
+        ganador.style.display = "block";
+    }
+    else if (resultado === "perdedor") {
+        perdedor.style.display = "block";
+    }
+}
+
+if (acceso_ganador && acceso_perdedor) {
+    acceso_ganador.addEventListener("click", () => {
+        mostrar_resultado_prueba("ganador");
+    });
+
+    acceso_perdedor.addEventListener("click", () => {
+        mostrar_resultado_prueba("perdedor");
+    });
+}
+
 /*Los if son para que en caso de que el html no sea el que usa "comenzar trivia" 
 no falle ahi. Lo mismo con la encuesta de satisfaccion*/
 
@@ -132,9 +162,9 @@ if (encuesta){
 
 if (boton){
     boton.addEventListener("click", comenzar);
-    preguntas_questionario.addEventListener("submit", chequear_sorteo)
-    volver_a_resultado.addEventListener("click", post_envio_questionario)
-    revizar_respuestas.forEach (boton => {boton.addEventListener("click", comenzar)})
+    preguntas_cuestionario.addEventListener("submit", chequear_sorteo)
+    volver_a_resultado.addEventListener("click", post_envio_cuestionario)
+    revisar_respuestas.forEach (boton => {boton.addEventListener("click", comenzar)})
      preguntas.forEach(pregunta => {
         pregunta.addEventListener("change", actualizar_progreso)
     });
