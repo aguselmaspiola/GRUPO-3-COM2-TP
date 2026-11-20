@@ -23,11 +23,14 @@ html{font-size: 100%;}
 
 body{
     display: grid;
+    grid-column: 2;
     grid-template-columns: 1fr 67% 1fr;
     grid-template-rows: auto 1fr auto;
     background-image: url("./IMAGENES/fondo_nubes.jpg");
 }
-
+body > * {
+    grid-column: 2;
+}
 header{
     background-image: url("./IMAGENES/fondo_header.jpg");
     background-size: cover;
@@ -38,12 +41,8 @@ header{
     grid-row: 1;
     position: sticky; top: 0%;
     z-index: 100;
+    transition: transform .3s ease;
 }
-header h1 {
-  font-size: 3rem;
-  margin:   10px 0;
-}
-
 header nav{
     gap: 50px;
     align-items: center;
@@ -117,7 +116,7 @@ a:hover {
 h1{
     color:var(--color_detalles);
     font-family: 'Simpsons';
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 1rem;
 }
